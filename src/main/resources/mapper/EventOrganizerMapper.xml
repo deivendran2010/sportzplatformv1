@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.EventOrganizerMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.EventOrganizer">
+    <id column="event_organizer_id" jdbcType="INTEGER" property="eventOrganizerId" />
+    <result column="event_refid" jdbcType="INTEGER" property="eventRefid" />
+    <result column="tournament_refid" jdbcType="INTEGER" property="tournamentRefid" />
+    <result column="organizer_role" jdbcType="VARCHAR" property="organizerRole" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.event_organizer
+    where event_organizer_id = #{eventOrganizerId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="event_organizer_id" keyProperty="eventOrganizerId" parameterType="com.skiya.sportzplatform.domain.EventOrganizer" useGeneratedKeys="true">
+    insert into sportzplatform.event_organizer (event_refid, tournament_refid, organizer_role
+      )
+    values (#{eventRefid,jdbcType=INTEGER}, #{tournamentRefid,jdbcType=INTEGER}, #{organizerRole,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.EventOrganizer">
+    update sportzplatform.event_organizer
+    set event_refid = #{eventRefid,jdbcType=INTEGER},
+      tournament_refid = #{tournamentRefid,jdbcType=INTEGER},
+      organizer_role = #{organizerRole,jdbcType=VARCHAR}
+    where event_organizer_id = #{eventOrganizerId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select event_organizer_id, event_refid, tournament_refid, organizer_role
+    from sportzplatform.event_organizer
+    where event_organizer_id = #{eventOrganizerId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select event_organizer_id, event_refid, tournament_refid, organizer_role
+    from sportzplatform.event_organizer
+  </select>
+</mapper>

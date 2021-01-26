@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.CompanyMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.Company">
+    <id column="company_id" jdbcType="INTEGER" property="companyId" />
+    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="company_reg_no" jdbcType="VARCHAR" property="companyRegNo" />
+    <result column="company_contact" jdbcType="VARCHAR" property="companyContact" />
+    <result column="company_profile_img" jdbcType="VARCHAR" property="companyProfileImg" />
+    <result column="company_email" jdbcType="VARCHAR" property="companyEmail" />
+    <result column="company_contact_no" jdbcType="VARCHAR" property="companyContactNo" />
+    <result column="company_website" jdbcType="VARCHAR" property="companyWebsite" />
+    <result column="company_desc" jdbcType="VARCHAR" property="companyDesc" />
+    <result column="alternate_name" jdbcType="VARCHAR" property="alternateName" />
+    <result column="company_img" jdbcType="VARCHAR" property="companyImg" />
+    <result column="social" jdbcType="OTHER" property="social" />
+    <result column="address" jdbcType="OTHER" property="address" />
+    <result column="company_type" jdbcType="ARRAY" property="companyType" typeHandler="com.skiya.sportzplatform.common.ArrayTypeHandler"/>
+    <result column="company_status" jdbcType="VARCHAR" property="companyStatus" />
+    <result column="reset_token" jdbcType="VARCHAR" property="resetToken" />
+    <result column="follower_count" jdbcType="INTEGER" property="followerCount" />
+    <result column="following_count" jdbcType="INTEGER" property="followingCount" />
+    <result column="company_adminid" jdbcType="INTEGER" property="companyAdmin" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.company
+    where company_id = #{companyId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="company_id" keyProperty="companyId" parameterType="com.skiya.sportzplatform.domain.Company" useGeneratedKeys="true">
+    insert into sportzplatform.company (company_name, company_reg_no, company_contact, 
+      company_profile_img, company_email, company_contact_no, 
+      company_website, company_desc, alternate_name, 
+      company_img, social, address, 
+      company_type,company_status, reset_token, follower_count,following_count,company_adminid)
+    values (#{companyName,jdbcType=VARCHAR}, #{companyRegNo,jdbcType=VARCHAR}, #{companyContact,jdbcType=VARCHAR}, 
+      #{companyProfileImg,jdbcType=VARCHAR}, #{companyEmail,jdbcType=VARCHAR}, #{companyContactNo,jdbcType=VARCHAR}, 
+      #{companyWebsite,jdbcType=VARCHAR}, #{companyDesc,jdbcType=VARCHAR}, #{alternateName,jdbcType=VARCHAR}, 
+      #{companyImg,jdbcType=VARCHAR}, 
+      #{social,jdbcType=OTHER,typeHandler=com.skiya.sportzplatform.common.JsonTypeHandler}, 
+      #{address,jdbcType=OTHER,typeHandler=com.skiya.sportzplatform.common.JsonTypeHandler}, 
+      #{companyType,jdbcType=ARRAY,typeHandler=com.skiya.sportzplatform.common.ArrayTypeHandler},
+      #{companyStatus,jdbcType=VARCHAR},#{resetToken,jdbcType=VARCHAR},
+      #{followerCount,jdbcType=INTEGER},#{followingCount,jdbcType=INTEGER},#{companyAdmin,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.Company">
+    update sportzplatform.company
+    set company_name = #{companyName,jdbcType=VARCHAR},
+      company_reg_no = #{companyRegNo,jdbcType=VARCHAR},
+      company_contact = #{companyContact,jdbcType=VARCHAR},
+      company_profile_img = #{companyProfileImg,jdbcType=VARCHAR},
+      company_email = #{companyEmail,jdbcType=VARCHAR},
+      company_contact_no = #{companyContactNo,jdbcType=VARCHAR},
+      company_website = #{companyWebsite,jdbcType=VARCHAR},
+      company_desc = #{companyDesc,jdbcType=VARCHAR},
+      alternate_name = #{alternateName,jdbcType=VARCHAR},
+      company_img = #{companyImg,jdbcType=VARCHAR},
+      social = #{social,jdbcType=OTHER,typeHandler=com.skiya.sportzplatform.common.JsonTypeHandler},
+      address = #{address,jdbcType=OTHER,typeHandler=com.skiya.sportzplatform.common.JsonTypeHandler},
+      company_type = #{companyType,jdbcType=ARRAY,typeHandler=com.skiya.sportzplatform.common.ArrayTypeHandler},
+      company_status = #{companyStatus,jdbcType=VARCHAR},
+      reset_token = #{resetToken,jdbcType=VARCHAR},
+      following_count = #{followingCount,jdbcType=INTEGER},
+      follower_count = #{followerCount,jdbcType=INTEGER},
+      company_adminid = #{companyAdmin,jdbcType=INTEGER}
+    where company_id = #{companyId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select company_id, company_name, company_reg_no, company_contact, company_profile_img, 
+    company_email, company_contact_no, company_website, company_desc, alternate_name, 
+    company_img, social, address, company_type, company_status, reset_token,
+   	follower_count,following_count,company_adminid
+    from sportzplatform.company
+    where company_id = #{companyId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByEmail" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select company_id, company_name, company_reg_no, company_contact, company_profile_img, 
+    company_email, company_contact_no, company_website, company_desc, alternate_name, 
+    company_img, social, address, company_type, company_status, reset_token,
+    follower_count,following_count,company_adminid
+    from sportzplatform.company
+    where company_email = #{companyEmail,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAllOrganizers" resultMap="BaseResultMap">
+    select company_id, company_name, company_reg_no, company_contact, company_profile_img, 
+    company_email, company_contact_no, company_website, company_desc, alternate_name, 
+    company_img, social, address, company_type, company_status, reset_token,
+    follower_count,following_count,company_adminid
+    from sportzplatform.company, sportzplatform.organizer o 
+    where company_id  = o.company_refid
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select company_id, company_name, company_reg_no, company_contact, company_profile_img, 
+    company_email, company_contact_no, company_website, company_desc, alternate_name, 
+    company_img, social, address, company_type, company_status, reset_token,
+    follower_count,following_count,company_adminid
+    from sportzplatform.company
+  </select>
+</mapper>

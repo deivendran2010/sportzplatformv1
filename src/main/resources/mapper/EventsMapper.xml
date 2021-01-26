@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.EventsMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.Events">
+    <id column="event_id" jdbcType="INTEGER" property="eventId" />
+    <result column="event_name" jdbcType="VARCHAR" property="eventName" />
+    <result column="event_short_desc" jdbcType="VARCHAR" property="eventShortDesc" />
+    <result column="event_desc" jdbcType="VARCHAR" property="eventDesc" />
+    <result column="parent_event_id" jdbcType="INTEGER" property="parentEventId" />
+    <result column="event_type" jdbcType="VARCHAR" property="eventType" />
+    <result column="event_category_refid" jdbcType="VARCHAR" property="eventCategoryrefId" />
+    <result column="event_startdate" jdbcType="TIMESTAMP" property="eventStartdate" />
+    <result column="event_enddate" jdbcType="TIMESTAMP" property="eventEnddate" />
+    
+    <result column="event_reg_startdate" jdbcType="TIMESTAMP" property="eventRegStartdate" />
+    <result column="event_reg_lastdate" jdbcType="TIMESTAMP" property="eventRegLastdate" />
+    <result column="event_regfee" jdbcType="NUMERIC" property="eventRegfee" />
+    <result column="event_flyer" jdbcType="VARCHAR" property="eventFlyer" />
+    
+    <result column="event_logo" jdbcType="VARCHAR" property="eventLogo" />
+    
+    <result column="event_status" jdbcType="VARCHAR" property="eventStatus" />
+    <result column="event_rules" jdbcType="VARCHAR" property="eventRules" />
+    <result column="contact_name" jdbcType="VARCHAR" property="contactName" />
+    <result column="contact_company_name" jdbcType="VARCHAR" property="contactCompanyName" />
+    <result column="contact_email" jdbcType="VARCHAR" property="contactEmail" />
+     <result column="contact_mobile" jdbcType="VARCHAR" property="contactMobile" />
+     <result column="sec_contact_name" jdbcType="VARCHAR" property="secContactName" />
+      <result column="sec_company_name" jdbcType="VARCHAR" property="secCompanyName" />
+      <result column="sec_contact_email" jdbcType="VARCHAR" property="secContactEmail" />
+       <result column="sec_contact_mobile" jdbcType="VARCHAR" property="secContactMobile" />
+         
+        
+        <result column="is_public_event" jdbcType="VARCHAR" property="isPublicEvent" />
+        <result column="collect_pymt_online" jdbcType="VARCHAR" property="collectPymtOnline" />
+         <result column="collect_pymt_offline" jdbcType="VARCHAR" property="collectPymtOffline" />
+        <result column="standard_playing_conditions" jdbcType="VARCHAR" property="standardPlayingConditions" />
+         <result column="standard_event_rules" jdbcType="VARCHAR" property="standardEventRules" />
+                 
+          <result column="indemnity_clause" jdbcType="VARCHAR" property="indemnityClause" />
+            <result column="agree_to_terms" jdbcType="VARCHAR" property="agreeToTerms" />
+              <result column="approver_comments" jdbcType="VARCHAR" property="approverComments" />
+   
+    
+    
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.events
+    where event_id = #{eventId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="event_id" keyProperty="eventId" parameterType="com.skiya.sportzplatform.domain.Events" useGeneratedKeys="true">
+    insert into sportzplatform.events (event_name,event_short_desc,event_desc, parent_event_id,event_type,event_category_refid,event_startdate, 
+    event_enddate,event_reg_startdate,event_reg_lastdate,event_regfee,event_flyer,event_logo,event_status,event_rules,contact_name,contact_company_name,
+    contact_email,contact_mobile,sec_contact_name,sec_company_name,sec_contact_email,sec_contact_mobile,is_public_event,collect_pymt_online,collect_pymt_offline,
+    standard_playing_conditions,standard_event_rules,indemnity_clause,agree_to_terms,approver_comments)values
+    
+    (#{eventName,jdbcType=VARCHAR},#{eventShortDesc,jdbcType=VARCHAR},#{eventDesc,jdbcType=VARCHAR},#{parentEventId,jdbcType=INTEGER},
+    #{eventType,jdbcType=VARCHAR},#{eventCategoryrefId,jdbcType=INTEGER},#{eventStartdate,jdbcType=TIMESTAMP},#{eventEnddate,jdbcType=TIMESTAMP},
+    #{eventRegStartdate,jdbcType=TIMESTAMP},#{eventRegLastdate,jdbcType=TIMESTAMP},#{eventRegfee,jdbcType=NUMERIC},#{eventFlyer,jdbcType=VARCHAR},#{eventLogo,jdbcType=VARCHAR},
+    #{eventStatus,jdbcType=VARCHAR},#{eventRules,jdbcType=VARCHAR},
+    #{contactName,jdbcType=VARCHAR},#{contactCompanyName,jdbcType=VARCHAR},#{contactEmail,jdbcType=VARCHAR},#{contactMobile,jdbcType=VARCHAR},
+    #{secContactName,jdbcType=VARCHAR},#{secCompanyName,jdbcType=VARCHAR},#{secContactEmail,jdbcType=VARCHAR},#{secContactMobile,jdbcType=VARCHAR},
+    #{isPublicEvent,jdbcType=VARCHAR},#{collectPymtOnline,jdbcType=VARCHAR},#{collectPymtOffline,jdbcType=VARCHAR},#{standardPlayingConditions,jdbcType=VARCHAR},
+    #{standardEventRules,jdbcType=VARCHAR},#{indemnityClause,jdbcType=VARCHAR},#{agreeToTerms,jdbcType=VARCHAR},#{approverComments,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.Events">
+    update sportzplatform.events
+    set event_name = #{eventName,jdbcType=VARCHAR},
+      event_short_desc = #{eventShortDesc,jdbcType=VARCHAR},
+      event_desc = #{eventDesc,jdbcType=VARCHAR},
+      parent_event_id = #{parentEventId,jdbcType=INTEGER},
+      event_type = #{eventType,jdbcType=VARCHAR},
+      event_category_refid = #{eventCategoryId,jdbcType=INTEGER},
+      event_startdate = #{eventStartdate,jdbcType=TIMESTAMP},
+      event_enddate = #{eventEnddate,jdbcType=TIMESTAMP},
+      event_reg_startdate=#{eventRegStartdate,jdbcType=TIMESTAMP},
+      event_reg_lastdate = #{eventRegLastdate,jdbcType=TIMESTAMP},
+      event_regfee = #{eventRegfee,jdbcType=NUMERIC},
+      event_flyer = #{eventFlyer,jdbcType=VARCHAR},
+      event_logo=#{eventLogo,jdbcType=VARCHAR},
+      event_status = #{eventStatus,jdbcType=VARCHAR},
+      event_rules= #{eventRules,jdbcType=VARCHAR},
+      contact_name=#{contactName,jdbcType=VARCHAR},
+      contact_company_name=#{contactCompanyName,jdbcType=VARCHAR},
+      contact_email=#{contactEmail,jdbcType=VARCHAR},
+      contact_mobile=#{contactMobile,jdbcType=VARCHAR},
+      sec_contact_name=#{secContactName,jdbcType=VARCHAR},
+      sec_company_name=#{secCompanyName,jdbcType=VARCHAR},
+      sec_contact_email=#{secContactEmail,jdbcType=VARCHAR},
+      sec_contact_mobile=#{secContactMobile,jdbcType=VARCHAR},
+      is_public_event=#{isPublicEvent,jdbcType=VARCHAR},
+      collect_pymt_online=#{collectPymtOnline,jdbcType=VARCHAR},
+      collect_pymt_offline=#{collectPymtOffline,jdbcType=VARCHAR},
+      standard_playing_conditions=#{standardPlayingConditions,jdbcType=VARCHAR},
+      standard_event_rules=#{standardEventRules,jdbcType=VARCHAR},
+      indemnity_clause=#{indemnityClause,jdbcType=VARCHAR},
+      agree_to_terms=#{agreeToTerms,jdbcType=VARCHAR},
+      approver_comments=#{approverComments,jdbcType=VARCHAR}
+    where event_id = #{eventId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select event_id,event_name,event_short_desc,event_desc, parent_event_id,event_type,event_category_refid,event_startdate, 
+    event_enddate,event_reg_startdate,event_reg_lastdate,event_regfee,event_flyer,event_logo,event_status,event_rules,contact_name,contact_company_name,
+    contact_email,contact_mobile,sec_contact_name,sec_company_name,sec_contact_email,sec_contact_mobile,is_public_event,collect_pymt_online,collect_pymt_offline,
+    standard_playing_conditions,standard_event_rules,indemnity_clause,agree_to_terms,approver_comments
+    from sportzplatform.events
+    where event_id = #{eventId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select event_id,event_name,event_short_desc,event_desc, parent_event_id,event_type,event_category_refid,event_startdate, 
+    event_enddate,event_reg_startdate,event_reg_lastdate,event_regfee,event_flyer,event_logo,event_status,event_rules,contact_name,contact_company_name,
+    contact_email,contact_mobile,sec_contact_name,sec_company_name,sec_contact_email,sec_contact_mobile,is_public_event,collect_pymt_online,collect_pymt_offline,
+    standard_playing_conditions,standard_event_rules,indemnity_clause,agree_to_terms,approver_comments
+    from sportzplatform.events
+  </select>
+</mapper>

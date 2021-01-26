@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.TournamentGroupsMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.TournamentGroups">
+    <id column="group_id" jdbcType="INTEGER" property="groupId" />
+    <result column="group_name" jdbcType="VARCHAR" property="groupName" />
+    <result column="tournament_category_refid" jdbcType="INTEGER" property="tournamentCategoryRefid" />
+    <result column="tournament_refid" jdbcType="INTEGER" property="tournamentRefid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.tournament_groups
+    where group_id = #{groupId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="group_id" keyProperty="groupId" parameterType="com.skiya.sportzplatform.domain.TournamentGroups" useGeneratedKeys="true">
+    insert into sportzplatform.tournament_groups (group_name, tournament_category_refid, 
+      tournament_refid)
+    values (#{groupName,jdbcType=VARCHAR}, #{tournamentCategoryRefid,jdbcType=INTEGER}, 
+      #{tournamentRefid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.TournamentGroups">
+    update sportzplatform.tournament_groups
+    set group_name = #{groupName,jdbcType=VARCHAR},
+      tournament_category_refid = #{tournamentCategoryRefid,jdbcType=INTEGER},
+      tournament_refid = #{tournamentRefid,jdbcType=INTEGER}
+    where group_id = #{groupId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select group_id, group_name, tournament_category_refid, tournament_refid
+    from sportzplatform.tournament_groups
+    where group_id = #{groupId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select group_id, group_name, tournament_category_refid, tournament_refid
+    from sportzplatform.tournament_groups
+  </select>
+</mapper>

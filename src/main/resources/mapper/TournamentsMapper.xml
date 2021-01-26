@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.TournamentsMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.Tournaments">
+    <id column="tournament_id" jdbcType="INTEGER" property="tournamentId" />
+    <result column="event_refid" jdbcType="INTEGER" property="eventRefid" />
+    <result column="sports_refid" jdbcType="INTEGER" property="sportsRefid" />
+    <result column="tournament_startdate" jdbcType="TIMESTAMP" property="tournamentStartdate" />
+    <result column="tournament_enddate" jdbcType="TIMESTAMP" property="tournamentEnddate" />
+    <result column="tournament_rounds" jdbcType="INTEGER" property="tournamentRounds" />
+    <result column="tournament_rules" jdbcType="VARCHAR" property="tournamentRules" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.tournaments
+    where tournament_id = #{tournamentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="tournament_id" keyProperty="tournamentId" parameterType="com.skiya.sportzplatform.domain.Tournaments" useGeneratedKeys="true">
+    insert into sportzplatform.tournaments (event_refid, sports_refid, tournament_startdate, 
+      tournament_enddate, tournament_rounds,tournament_rules)
+    values (#{eventRefid,jdbcType=INTEGER}, #{sportsRefid,jdbcType=INTEGER}, #{tournamentStartdate,jdbcType=TIMESTAMP}, 
+      #{tournamentEnddate,jdbcType=TIMESTAMP}, #{tournamentRounds,jdbcType=INTEGER},#{tournamentRules,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.Tournaments">
+    update sportzplatform.tournaments
+    set event_refid = #{eventRefid,jdbcType=INTEGER},
+      sports_refid = #{sportsRefid,jdbcType=INTEGER},
+      tournament_startdate = #{tournamentStartdate,jdbcType=TIMESTAMP},
+      tournament_enddate = #{tournamentEnddate,jdbcType=TIMESTAMP},
+      tournament_rounds = #{tournamentRounds,jdbcType=INTEGER},
+      tournament_rules = #{tournamentRules,jdbcType=VARCHAR}
+    where tournament_id = #{tournamentId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select tournament_id, event_refid, sports_refid, tournament_startdate, tournament_enddate, 
+    tournament_rounds,tournament_rules
+    from sportzplatform.tournaments
+    where tournament_id = #{tournamentId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select tournament_id, event_refid, sports_refid, tournament_startdate, tournament_enddate, 
+    tournament_rounds, tournament_rules
+    from sportzplatform.tournaments
+  </select>
+</mapper>

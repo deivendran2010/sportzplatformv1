@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.User">
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="first_name" jdbcType="VARCHAR" property="firstName" />
+    <result column="last_name" jdbcType="VARCHAR" property="lastName" />
+    <result column="middle_name" jdbcType="VARCHAR" property="middleName" />
+    <result column="user_profile_img" jdbcType="VARCHAR" property="userProfileImg" />
+    <result column="user_email" jdbcType="VARCHAR" property="userEmail" />
+    <result column="user_phone" jdbcType="VARCHAR" property="userPhone" />
+    <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
+    <result column="last_login_date" jdbcType="TIMESTAMP" property="lastLoginDate" />
+    <result column="provider_id" jdbcType="VARCHAR" property="providerId" />
+    <result column="user_status" jdbcType="CHAR" property="userStatus" />
+    <result column="reset_token" jdbcType="VARCHAR" property="resetToken" />
+    <result column="user_refid" jdbcType="INTEGER" property="userRefid" />
+    <result column="alternate_name" jdbcType="VARCHAR" property="alternateName" />
+    <result column="user_img" jdbcType="VARCHAR" property="userImg" />
+    <result column="user_gender" jdbcType="VARCHAR" property="userGender" />
+    <result column="user_dob" jdbcType="DATE" property="userDob" />
+    <result column="user_passport_nric" jdbcType="VARCHAR" property="userPassportNric" />
+    <result column="user_nationality" jdbcType="VARCHAR" property="userNationality" />
+    <result column="user_ethinicity" jdbcType="VARCHAR" property="userEthinicity" />
+    <result column="social" jdbcType="OTHER" property="social" />
+    <result column="address" jdbcType="OTHER" property="address" />
+    <result column="user_type" jdbcType="ARRAY" property="userType" typeHandler="com.skiya.sportzplatform.common.ArrayTypeHandler" />
+    <result column="follower_count" jdbcType="INTEGER" property="followerCount" />
+    <result column="following_count" jdbcType="INTEGER" property="followingCount" />
+  </resultMap>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="user_id" keyProperty="userId" parameterType="com.skiya.sportzplatform.domain.User" useGeneratedKeys="true">
+    insert into sportzplatform.user (first_name, last_name, middle_name, 
+      user_profile_img, user_email, user_phone, 
+      user_password, last_login_date, provider_id, 
+      user_status, reset_token, alternate_name, user_img, 
+      user_dob, user_passport_nric, user_nationality, 
+      user_ethinicity, social, address,user_type,user_gender,follower_count,following_count)
+    values (#{firstName,jdbcType=VARCHAR}, #{lastName,jdbcType=VARCHAR}, #{middleName,jdbcType=VARCHAR}, 
+      #{userProfileImg,jdbcType=VARCHAR}, #{userEmail,jdbcType=VARCHAR}, #{userPhone,jdbcType=VARCHAR}, 
+      #{userPassword,jdbcType=VARCHAR}, #{lastLoginDate,jdbcType=TIMESTAMP}, #{providerId,jdbcType=VARCHAR}, 
+      #{userStatus,jdbcType=CHAR}, #{resetToken,jdbcType=VARCHAR},#{alternateName,jdbcType=VARCHAR}, #{userImg,jdbcType=VARCHAR}, 
+      #{userDob,jdbcType=DATE}, #{userPassportNric,jdbcType=VARCHAR}, #{userNationality,jdbcType=VARCHAR}, 
+      #{userEthinicity,jdbcType=VARCHAR}, 
+      #{social,jdbcType=OTHER,typeHandler=com.skiya.sportzplatform.common.JsonTypeHandler}, 
+      #{address,jdbcType=OTHER,typeHandler=com.skiya.sportzplatform.common.JsonTypeHandler},
+      #{userType,jdbcType=ARRAY,typeHandler=com.skiya.sportzplatform.common.ArrayTypeHandler},
+      #{userGender,jdbcType=VARCHAR},
+      #{followerCount,jdbcType=INTEGER},#{followingCount,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.User">
+    update sportzplatform.user
+    set first_name = #{firstName,jdbcType=VARCHAR},
+      last_name = #{lastName,jdbcType=VARCHAR},
+      middle_name = #{middleName,jdbcType=VARCHAR},
+      user_profile_img = #{userProfileImg,jdbcType=VARCHAR},
+      user_email = #{userEmail,jdbcType=VARCHAR},
+      user_phone = #{userPhone,jdbcType=VARCHAR},
+      user_password = #{userPassword,jdbcType=VARCHAR},
+      last_login_date = #{lastLoginDate,jdbcType=TIMESTAMP},
+      provider_id = #{providerId,jdbcType=VARCHAR},
+      user_status = #{userStatus,jdbcType=CHAR},
+      reset_token = #{resetToken,jdbcType=VARCHAR},
+      alternate_name = #{alternateName,jdbcType=VARCHAR},
+      user_img = #{userImg,jdbcType=VARCHAR},
+      user_dob = #{userDob,jdbcType=DATE},
+      user_passport_nric = #{userPassportNric,jdbcType=VARCHAR},
+      user_nationality = #{userNationality,jdbcType=VARCHAR},
+      user_ethinicity = #{userEthinicity,jdbcType=VARCHAR},
+      social = #{social,jdbcType=OTHER,typeHandler=com.skiya.sportzplatform.common.JsonTypeHandler},
+      address = #{address,jdbcType=OTHER,typeHandler=com.skiya.sportzplatform.common.JsonTypeHandler},
+      user_type = #{userType,jdbcType=ARRAY,typeHandler=com.skiya.sportzplatform.common.ArrayTypeHandler},
+      user_gender = #{userGender,jdbcType=VARCHAR},
+      following_count = #{followingCount,jdbcType=INTEGER},
+      follower_count = #{followerCount,jdbcType=INTEGER}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select user_id, first_name, last_name, middle_name, user_profile_img, user_email, 
+    user_phone, user_password, last_login_date, provider_id, user_status, reset_token,
+    alternate_name, user_img, user_dob, user_passport_nric, 
+    user_nationality, user_ethinicity, social, address, user_type, user_gender,follower_count,following_count
+    from sportzplatform.user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByEmail" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select user_id, first_name, last_name, middle_name, user_profile_img, user_email, 
+    user_phone, user_password, last_login_date, provider_id, user_status, reset_token,
+    alternate_name, user_img, user_dob, user_passport_nric, 
+    user_nationality, user_ethinicity, social, address, user_type, user_gender,follower_count,following_count
+    from sportzplatform.user
+    where user_email = #{userEmail,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByResetToken" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select user_id, first_name, last_name, middle_name, user_profile_img, user_email, 
+    user_phone, user_password, last_login_date, provider_id, user_status, reset_token,
+    alternate_name, user_img, user_dob, user_passport_nric, 
+    user_nationality, user_ethinicity, social, address, user_type, user_gender,follower_count,following_count
+    from sportzplatform.user
+    where reset_token = #{resetToken,jdbcType=VARCHAR}
+  </select>
+  
+  
+  <select id="selectAll" resultMap="BaseResultMap">
+    select user_id, first_name, last_name, middle_name, user_profile_img, user_email, 
+    user_phone, user_password, last_login_date, provider_id, user_status, reset_token,
+    alternate_name, user_img, user_dob, user_passport_nric, 
+    user_nationality, user_ethinicity, social, address, user_type, user_gender,follower_count,following_count
+    from sportzplatform.user
+  </select>
+</mapper>

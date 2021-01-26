@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.TournamentPlayerRegistrationMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.TournamentPlayerRegistration">
+    <id column="tour_player_reg_id" jdbcType="INTEGER" property="tourPlayerRegId" />
+    <result column="registration_refid" jdbcType="INTEGER" property="registrationRefid" />
+    <result column="seeding" jdbcType="INTEGER" property="seeding" />
+    <result column="tournament_category_refid" jdbcType="INTEGER" property="tournamentCategoryRefid" />
+    <result column="tournament_refid" jdbcType="INTEGER" property="tournamentRefid" />
+    <result column="group_refid" jdbcType="INTEGER" property="groupRefid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.tournament_player_registration
+    where tour_player_reg_id = #{tourPlayerRegId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="tour_player_reg_id" keyProperty="tourPlayerRegId" parameterType="com.skiya.sportzplatform.domain.TournamentPlayerRegistration" useGeneratedKeys="true">
+    insert into sportzplatform.tournament_player_registration (registration_refid, seeding, tournament_category_refid, 
+      tournament_refid, group_refid)
+    values (#{registrationRefid,jdbcType=INTEGER}, #{seeding,jdbcType=INTEGER}, #{tournamentCategoryRefid,jdbcType=INTEGER}, 
+      #{tournamentRefid,jdbcType=INTEGER}, #{groupRefid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.TournamentPlayerRegistration">
+    update sportzplatform.tournament_player_registration
+    set registration_refid = #{registrationRefid,jdbcType=INTEGER},
+      seeding = #{seeding,jdbcType=INTEGER},
+      tournament_category_refid = #{tournamentCategoryRefid,jdbcType=INTEGER},
+      tournament_refid = #{tournamentRefid,jdbcType=INTEGER},
+      group_refid = #{groupRefid,jdbcType=INTEGER}
+    where tour_player_reg_id = #{tourPlayerRegId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select tour_player_reg_id, registration_refid, seeding, tournament_category_refid, 
+    tournament_refid, group_refid
+    from sportzplatform.tournament_player_registration
+    where tour_player_reg_id = #{tourPlayerRegId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select tour_player_reg_id, registration_refid, seeding, tournament_category_refid, 
+    tournament_refid, group_refid
+    from sportzplatform.tournament_player_registration
+  </select>
+</mapper>

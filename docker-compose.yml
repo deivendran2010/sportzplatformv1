@@ -1,0 +1,24 @@
+version: '2'
+services:
+    sportzplatform_app:
+        container_name: sportzplatform
+        image: sportzplatform
+        build: ./
+        ports:
+            - '7777:7777'
+        depends_on:
+            - sportzplatform_db
+    sportzplatform_db:
+        container_name: sportzplatform_db
+        image: 'postgres:latest'
+        volumes:
+            - 'sportzplatform_db:/var/lib/postgresql/data'
+        environment:
+            - POSTGRES_PASSWORD=password
+            - POSTGRES_USER=postgres
+            - POSTGRES_DB=sportzplatform
+            - PGDATA=/var/lib/postgresql/data/pgdata
+        ports:
+            - '5432:5432'
+volumes:
+    sportzplatform_db: {}

@@ -1,0 +1,95 @@
+2020-03-18 19:40:19,927 INFO org.apache.juli.logging.DirectJDKLog [http-nio-7777-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-18 19:40:19,928 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-2] Initializing Servlet 'dispatcherServlet'
+2020-03-18 19:40:19,928 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-7777-exec-2] Detected StandardServletMultipartResolver
+2020-03-18 19:40:19,930 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-2] enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-03-18 19:40:19,931 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-2] Completed initialization in 3 ms
+2020-03-18 19:40:19,932 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-2] GET "/user/all", parameters={}
+2020-03-18 19:40:19,932 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-7777-exec-2] Mapped to com.skiya.sportzplatform.web.rest.UserResource#getAllUsers()
+2020-03-18 19:40:19,943 DEBUG org.springframework.jdbc.datasource.DataSourceUtils [http-nio-7777-exec-2] Fetching JDBC Connection from DataSource
+2020-03-18 19:40:19,945 INFO com.zaxxer.hikari.HikariDataSource [http-nio-7777-exec-2] HikariPool-5 - Starting...
+2020-03-18 19:40:19,971 INFO com.zaxxer.hikari.HikariDataSource [http-nio-7777-exec-2] HikariPool-5 - Start completed.
+2020-03-18 19:40:19,971 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-2] ==>  Preparing: select c.*, co.company_id,co.company_name from users c left outer join company co on c.company_ref_id = co.company_id 
+2020-03-18 19:40:19,972 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-2] ==> Parameters: 
+2020-03-18 19:40:19,974 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-2] <==      Total: 1
+2020-03-18 19:40:19,975 DEBUG org.springframework.jdbc.datasource.DataSourceUtils [http-nio-7777-exec-2] Fetching JDBC Connection from DataSource
+2020-03-18 19:40:19,975 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-2] ==>  Preparing: SELECT ur.user_role_id, ur.user_ref_id,ur.role_type,lt.lookup_value as role_desc from user_role ur, lookup_table lt where lt.lookup_key = ur.role_type and lt.lookup_type='RL' and ur.user_ref_id= ? 
+2020-03-18 19:40:19,976 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-2] ==> Parameters: 2(Long)
+2020-03-18 19:40:19,978 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-2] <==      Total: 0
+2020-03-18 19:40:19,979 DEBUG com.skiya.sportzplatform.web.rest.UserResource [http-nio-7777-exec-2] User List...1
+2020-03-18 19:40:19,980 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-7777-exec-2] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-03-18 19:40:19,981 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-2] Writing [[UserDTO [firstName=Siva, lastName=Sankaran, middleName=B, userEmail=siva77@gmail.com, userPhone=877 (truncated)...]
+2020-03-18 19:40:19,986 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-2] Completed 200 OK
+2020-03-18 19:41:48,059 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-5] GET "/user/2", parameters={}
+2020-03-18 19:41:48,061 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-7777-exec-5] Mapped to com.skiya.sportzplatform.web.rest.UserResource#getUser(long)
+2020-03-18 19:41:48,066 DEBUG com.skiya.sportzplatform.web.rest.UserResource [http-nio-7777-exec-5] User Id...2
+2020-03-18 19:41:48,067 DEBUG org.springframework.jdbc.datasource.DataSourceUtils [http-nio-7777-exec-5] Fetching JDBC Connection from DataSource
+2020-03-18 19:41:48,070 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-5] ==>  Preparing: select c.*, co.company_id,co.company_name from users c left outer join company co on c.company_ref_id = co.company_id where c.user_id = ? 
+2020-03-18 19:41:48,071 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-5] ==> Parameters: 2(Long)
+2020-03-18 19:41:48,074 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-5] <==      Total: 1
+2020-03-18 19:41:48,075 DEBUG org.springframework.jdbc.datasource.DataSourceUtils [http-nio-7777-exec-5] Fetching JDBC Connection from DataSource
+2020-03-18 19:41:48,075 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-5] ==>  Preparing: SELECT ur.user_role_id, ur.user_ref_id,ur.role_type,lt.lookup_value as role_desc from user_role ur, lookup_table lt where lt.lookup_key = ur.role_type and lt.lookup_type='RL' and ur.user_ref_id= ? 
+2020-03-18 19:41:48,076 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-5] ==> Parameters: 2(Long)
+2020-03-18 19:41:48,077 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-5] <==      Total: 0
+2020-03-18 19:41:48,080 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-7777-exec-5] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-03-18 19:41:48,080 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-5] Writing [UserDTO [firstName=Siva, lastName=Sankaran, middleName=B, userEmail=siva77@gmail.com, userPhone=8778 (truncated)...]
+2020-03-18 19:41:48,082 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-5] Completed 200 OK
+2020-03-18 19:43:50,511 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-8] PUT "/user/updateUser/2", parameters={}
+2020-03-18 19:43:50,512 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-7777-exec-8] Mapped to com.skiya.sportzplatform.web.rest.UserResource#updateUser(long, UserDTO)
+2020-03-18 19:43:50,518 DEBUG org.springframework.web.method.support.InvocableHandlerMethod [http-nio-7777-exec-8] Could not resolve parameter [1] in public org.springframework.http.ResponseEntity<?> com.skiya.sportzplatform.web.rest.UserResource.updateUser(long,com.skiya.sportzplatform.dto.UserDTO): JSON parse error: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries
+ at [Source: (PushbackInputStream); line: 3, column: 2]
+2020-03-18 19:43:50,518 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-7777-exec-8] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries
+ at [Source: (PushbackInputStream); line: 3, column: 2]]
+2020-03-18 19:43:50,518 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-8] Completed 400 BAD_REQUEST
+2020-03-18 19:43:50,519 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-8] "ERROR" dispatch for PUT "/error", parameters={}
+2020-03-18 19:43:50,520 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-7777-exec-8] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2020-03-18 19:43:50,522 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-7777-exec-8] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-03-18 19:43:50,522 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-8] Writing [{timestamp=Wed Mar 18 19:43:50 SGT 2020, status=400, error=Bad Request, message=JSON parse error: Un (truncated)...]
+2020-03-18 19:43:50,529 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-8] Exiting from "ERROR" dispatch, status 400
+2020-03-18 19:44:53,221 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-10] PUT "/user/updateUser/2", parameters={}
+2020-03-18 19:44:53,222 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-7777-exec-10] Mapped to com.skiya.sportzplatform.web.rest.UserResource#updateUser(long, UserDTO)
+2020-03-18 19:44:53,224 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-10] Read "application/json;charset=UTF-8" to [UserDTO [firstName=Siva, lastName=Sankar, middleName=B, userEmail=siva77@gmail.com, userPhone=877786 (truncated)...]
+2020-03-18 19:44:53,225 DEBUG com.skiya.sportzplatform.web.rest.UserResource [http-nio-7777-exec-10] Updating Users for id 2
+2020-03-18 19:44:53,226 DEBUG org.springframework.jdbc.datasource.DataSourceUtils [http-nio-7777-exec-10] Fetching JDBC Connection from DataSource
+2020-03-18 19:44:53,227 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-10] ==>  Preparing: select c.*, co.company_id,co.company_name from users c left outer join company co on c.company_ref_id = co.company_id where c.user_id = ? 
+2020-03-18 19:44:53,228 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-10] ==> Parameters: 2(Long)
+2020-03-18 19:44:53,233 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-10] <==      Total: 1
+2020-03-18 19:44:53,234 DEBUG org.springframework.jdbc.datasource.DataSourceUtils [http-nio-7777-exec-10] Fetching JDBC Connection from DataSource
+2020-03-18 19:44:53,235 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-10] ==>  Preparing: SELECT ur.user_role_id, ur.user_ref_id,ur.role_type,lt.lookup_value as role_desc from user_role ur, lookup_table lt where lt.lookup_key = ur.role_type and lt.lookup_type='RL' and ur.user_ref_id= ? 
+2020-03-18 19:44:53,235 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-10] ==> Parameters: 2(Long)
+2020-03-18 19:44:53,237 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-10] <==      Total: 0
+2020-03-18 19:44:53,238 DEBUG org.springframework.transaction.support.AbstractPlatformTransactionManager [http-nio-7777-exec-10] Creating new transaction with name [com.skiya.sportzplatform.service.UserService.updateUser]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2020-03-18 19:44:53,238 DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager [http-nio-7777-exec-10] Acquired Connection [HikariProxyConnection@-538658796 wrapping org.postgresql.jdbc.PgConnection@6eb0be06] for JDBC transaction
+2020-03-18 19:44:53,238 DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager [http-nio-7777-exec-10] Switching JDBC Connection [HikariProxyConnection@-538658796 wrapping org.postgresql.jdbc.PgConnection@6eb0be06] to manual commit
+2020-03-18 19:44:53,239 DEBUG com.skiya.sportzplatform.service.UserService [http-nio-7777-exec-10] ÜserDTO....UserDTO [firstName=Siva, lastName=Sankar, middleName=B, userEmail=siva77@gmail.com, userPhone=87778666, userPassword=lmsuser1, lastLoginDate=null, companyId=3, companyName=null, userStatus=null, userRolesList=[]]
+2020-03-18 19:44:53,239 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-10] ==>  Preparing: select c.*, co.company_id,co.company_name from users c left outer join company co on c.company_ref_id = co.company_id where c.user_id = ? 
+2020-03-18 19:44:53,240 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-10] ==> Parameters: 2(Long)
+2020-03-18 19:44:53,241 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-10] <==      Total: 1
+2020-03-18 19:44:53,242 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-10] ==>  Preparing: update users set first_name = ?, last_name = ?, middle_name = ?, user_email = ?, user_phone = ?, user_password = ?, last_login_date = ?, company_ref_id = ?, profile_pic = ?, created_by = ?, created_date = ?, modified_by = ?, modified_date = ?, reset_token = ?, user_status = ? where user_id = ? 
+2020-03-18 19:44:53,243 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-10] ==> Parameters: Siva(String), Sankar(String), B(String), siva77@gmail.com(String), 87778666(String), lmsuser1(String), 2020-03-18 19:44:53.2411153(Timestamp), 3(Long), null, null, 2020-03-18 19:36:14.548437(Timestamp), null, 2020-03-18 19:36:14.548437(Timestamp), null, AC (String), 2(Long)
+2020-03-18 19:44:53,245 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-10] <==    Updates: 1
+2020-03-18 19:44:53,246 DEBUG com.skiya.sportzplatform.service.UserService [http-nio-7777-exec-10] Update Successful...
+2020-03-18 19:44:53,246 DEBUG org.springframework.transaction.support.AbstractPlatformTransactionManager [http-nio-7777-exec-10] Initiating transaction commit
+2020-03-18 19:44:53,247 DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager [http-nio-7777-exec-10] Committing JDBC transaction on Connection [HikariProxyConnection@-538658796 wrapping org.postgresql.jdbc.PgConnection@6eb0be06]
+2020-03-18 19:44:53,248 DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager [http-nio-7777-exec-10] Releasing JDBC Connection [HikariProxyConnection@-538658796 wrapping org.postgresql.jdbc.PgConnection@6eb0be06] after transaction
+2020-03-18 19:44:53,251 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-7777-exec-10] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-03-18 19:44:53,251 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-10] Writing [com.skiya.sportzplatform.dto.RestResponse@8cd33df1]
+2020-03-18 19:44:53,252 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-10] Completed 200 OK
+2020-03-18 20:01:45,948 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(4)-127.0.0.1] Application shutdown requested.
+2020-03-18 20:01:45,948 DEBUG org.springframework.context.support.AbstractApplicationContext [RMI TCP Connection(4)-127.0.0.1] Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4d26c083, started on Wed Mar 18 19:39:57 SGT 2020
+2020-03-18 20:01:45,950 DEBUG org.springframework.boot.actuate.endpoint.jmx.JmxEndpointExporter [RMI TCP Connection(4)-127.0.0.1] Unregister endpoint with ObjectName 'org.springframework.boot:type=Endpoint,name=Beans' from the JMX domain
+2020-03-18 20:01:45,951 DEBUG org.springframework.boot.actuate.endpoint.jmx.JmxEndpointExporter [RMI TCP Connection(4)-127.0.0.1] Unregister endpoint with ObjectName 'org.springframework.boot:type=Endpoint,name=Caches' from the JMX domain
+2020-03-18 20:01:45,951 DEBUG org.springframework.boot.actuate.endpoint.jmx.JmxEndpointExporter [RMI TCP Connection(4)-127.0.0.1] Unregister endpoint with ObjectName 'org.springframework.boot:type=Endpoint,name=Health' from the JMX domain
+2020-03-18 20:01:45,951 DEBUG org.springframework.boot.actuate.endpoint.jmx.JmxEndpointExporter [RMI TCP Connection(4)-127.0.0.1] Unregister endpoint with ObjectName 'org.springframework.boot:type=Endpoint,name=Info' from the JMX domain
+2020-03-18 20:01:45,951 DEBUG org.springframework.boot.actuate.endpoint.jmx.JmxEndpointExporter [RMI TCP Connection(4)-127.0.0.1] Unregister endpoint with ObjectName 'org.springframework.boot:type=Endpoint,name=Conditions' from the JMX domain
+2020-03-18 20:01:45,952 DEBUG org.springframework.boot.actuate.endpoint.jmx.JmxEndpointExporter [RMI TCP Connection(4)-127.0.0.1] Unregister endpoint with ObjectName 'org.springframework.boot:type=Endpoint,name=Configprops' from the JMX domain
+2020-03-18 20:01:45,952 DEBUG org.springframework.boot.actuate.endpoint.jmx.JmxEndpointExporter [RMI TCP Connection(4)-127.0.0.1] Unregister endpoint with ObjectName 'org.springframework.boot:type=Endpoint,name=Env' from the JMX domain
+2020-03-18 20:01:45,952 DEBUG org.springframework.boot.actuate.endpoint.jmx.JmxEndpointExporter [RMI TCP Connection(4)-127.0.0.1] Unregister endpoint with ObjectName 'org.springframework.boot:type=Endpoint,name=Loggers' from the JMX domain
+2020-03-18 20:01:45,952 DEBUG org.springframework.boot.actuate.endpoint.jmx.JmxEndpointExporter [RMI TCP Connection(4)-127.0.0.1] Unregister endpoint with ObjectName 'org.springframework.boot:type=Endpoint,name=Threaddump' from the JMX domain
+2020-03-18 20:01:45,953 DEBUG org.springframework.boot.actuate.endpoint.jmx.JmxEndpointExporter [RMI TCP Connection(4)-127.0.0.1] Unregister endpoint with ObjectName 'org.springframework.boot:type=Endpoint,name=Metrics' from the JMX domain
+2020-03-18 20:01:45,953 DEBUG org.springframework.boot.actuate.endpoint.jmx.JmxEndpointExporter [RMI TCP Connection(4)-127.0.0.1] Unregister endpoint with ObjectName 'org.springframework.boot:type=Endpoint,name=Scheduledtasks' from the JMX domain
+2020-03-18 20:01:45,953 DEBUG org.springframework.boot.actuate.endpoint.jmx.JmxEndpointExporter [RMI TCP Connection(4)-127.0.0.1] Unregister endpoint with ObjectName 'org.springframework.boot:type=Endpoint,name=Mappings' from the JMX domain
+2020-03-18 20:01:45,953 DEBUG org.springframework.jmx.export.MBeanExporter [RMI TCP Connection(4)-127.0.0.1] Unregistering JMX-exposed beans on shutdown
+2020-03-18 20:01:45,953 DEBUG org.springframework.jmx.support.MBeanRegistrationSupport [RMI TCP Connection(4)-127.0.0.1] Unregistering JMX-exposed beans
+2020-03-18 20:01:45,954 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(4)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 20:01:45,956 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-5 - Shutdown initiated...
+2020-03-18 20:01:45,957 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-5 - Shutdown completed.

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.FollowerMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.Follower">
+    <id column="follower_id" jdbcType="INTEGER" property="followerId" />
+    <result column="follower_userid" jdbcType="INTEGER" property="followerUserid" />
+    <result column="company_refid" jdbcType="INTEGER" property="companyRefid" />
+    <result column="user_refid" jdbcType="INTEGER" property="userRefid" />
+    <result column="followed_from" jdbcType="DATE" property="followedFrom" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.follower
+    where follower_id = #{followerId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="follower_id" keyProperty="followerId" parameterType="com.skiya.sportzplatform.domain.Follower" useGeneratedKeys="true">
+    insert into sportzplatform.follower (follower_userid, company_refid, user_refid, 
+      followed_from)
+    values (#{followerUserid,jdbcType=INTEGER}, #{companyRefid,jdbcType=INTEGER}, #{userRefid,jdbcType=INTEGER}, 
+      #{followedFrom,jdbcType=DATE})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.Follower">
+    update sportzplatform.follower
+    set follower_userid = #{followerUserid,jdbcType=INTEGER},
+      company_refid = #{companyRefid,jdbcType=INTEGER},
+      user_refid = #{userRefid,jdbcType=INTEGER},
+      followed_from = #{followedFrom,jdbcType=DATE}
+    where follower_id = #{followerId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select follower_id, follower_userid, company_refid, user_refid, followed_from
+    from sportzplatform.follower
+    where follower_id = #{followerId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select follower_id, follower_userid, company_refid, user_refid, followed_from
+    from sportzplatform.follower
+  </select>
+</mapper>

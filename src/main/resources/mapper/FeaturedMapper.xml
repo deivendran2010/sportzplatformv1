@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.FeaturedMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.Featured">
+    <id column="featured_id" jdbcType="INTEGER" property="featuredId" />
+    <result column="featured_refid" jdbcType="INTEGER" property="featuredRefid" />
+    <result column="featured_type" jdbcType="VARCHAR" property="featuredType" />
+    <result column="featured_img" jdbcType="VARCHAR" property="featuredImg" />
+    <result column="featured_shortdesc" jdbcType="VARCHAR" property="featuredShortdesc" />
+    <result column="featured_name" jdbcType="VARCHAR" property="featuredName" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.featured
+    where featured_id = #{featuredId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="featured_id" keyProperty="featuredId" parameterType="com.skiya.sportzplatform.domain.Featured" useGeneratedKeys="true">
+    insert into sportzplatform.featured (featured_refid, featured_type, featured_img, 
+      featured_shortdesc, featured_name)
+    values (#{featuredRefid,jdbcType=INTEGER}, #{featuredType,jdbcType=VARCHAR}, #{featuredImg,jdbcType=VARCHAR}, 
+      #{featuredShortdesc,jdbcType=VARCHAR}, #{featuredName,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.Featured">
+    update sportzplatform.featured
+    set featured_refid = #{featuredRefid,jdbcType=INTEGER},
+      featured_type = #{featuredType,jdbcType=VARCHAR},
+      featured_img = #{featuredImg,jdbcType=VARCHAR},
+      featured_shortdesc = #{featuredShortdesc,jdbcType=VARCHAR},
+      featured_name = #{featuredName,jdbcType=VARCHAR}
+    where featured_id = #{featuredId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select featured_id, featured_refid, featured_type, featured_img, featured_shortdesc, 
+    featured_name
+    from sportzplatform.featured
+    where featured_id = #{featuredId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select featured_id, featured_refid, featured_type, featured_img, featured_shortdesc, 
+    featured_name
+    from sportzplatform.featured
+  </select>
+  
+  <select id="selectByType" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select featured_id, featured_refid, featured_type, featured_img, featured_shortdesc, 
+    featured_name
+    from sportzplatform.featured
+    where featured_type = #{featuredType,jdbcType=VARCHAR}
+  </select>
+  
+</mapper>

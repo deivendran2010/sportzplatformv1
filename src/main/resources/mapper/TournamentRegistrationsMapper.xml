@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.TournamentRegistrationsMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.TournamentRegistrations">
+    <id column="registration_id" jdbcType="INTEGER" property="registrationId" />
+    <result column="player_id" jdbcType="INTEGER" property="playerId" />
+    <result column="registration_date" jdbcType="TIMESTAMP" property="registrationDate" />
+    <result column="team_id" jdbcType="INTEGER" property="teamId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.tournament_registrations
+    where registration_id = #{registrationId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="registration_id" keyProperty="registrationId" parameterType="com.skiya.sportzplatform.domain.TournamentRegistrations" useGeneratedKeys="true">
+    insert into sportzplatform.tournament_registrations (player_id, registration_date, team_id
+      )
+    values (#{playerId,jdbcType=INTEGER}, #{registrationDate,jdbcType=TIMESTAMP}, #{teamId,jdbcType=INTEGER}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.TournamentRegistrations">
+    update sportzplatform.tournament_registrations
+    set player_id = #{playerId,jdbcType=INTEGER},
+      registration_date = #{registrationDate,jdbcType=TIMESTAMP},
+      team_id = #{teamId,jdbcType=INTEGER}
+    where registration_id = #{registrationId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select registration_id, player_id, registration_date, team_id
+    from sportzplatform.tournament_registrations
+    where registration_id = #{registrationId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select registration_id, player_id, registration_date, team_id
+    from sportzplatform.tournament_registrations
+  </select>
+</mapper>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.SocialMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.Social">
+    <id column="social_id" jdbcType="INTEGER" property="socialId" />
+    <result column="facebook_id" jdbcType="VARCHAR" property="facebookId" />
+    <result column="twitter_id" jdbcType="VARCHAR" property="twitterId" />
+    <result column="instagram_id" jdbcType="VARCHAR" property="instagramId" />
+    <result column="linkedin_id" jdbcType="VARCHAR" property="linkedinId" />
+    <result column="marketing_contact" jdbcType="VARCHAR" property="marketingContact" />
+    <result column="marketing_contact_email" jdbcType="VARCHAR" property="marketingContactEmail" />
+    <result column="marketing_contact_phone" jdbcType="VARCHAR" property="marketingContactPhone" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.social
+    where social_id = #{socialId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="social_id" keyProperty="socialId" parameterType="com.skiya.sportzplatform.domain.Social" useGeneratedKeys="true">
+    insert into sportzplatform.social (facebook_id, twitter_id, instagram_id, 
+      linkedin_id, marketing_contact, marketing_contact_email, 
+      marketing_contact_phone)
+    values (#{facebookId,jdbcType=VARCHAR}, #{twitterId,jdbcType=VARCHAR}, #{instagramId,jdbcType=VARCHAR}, 
+      #{linkedinId,jdbcType=VARCHAR}, #{marketingContact,jdbcType=VARCHAR}, #{marketingContactEmail,jdbcType=VARCHAR}, 
+      #{marketingContactPhone,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.Social">
+    update sportzplatform.social
+    set facebook_id = #{facebookId,jdbcType=VARCHAR},
+      twitter_id = #{twitterId,jdbcType=VARCHAR},
+      instagram_id = #{instagramId,jdbcType=VARCHAR},
+      linkedin_id = #{linkedinId,jdbcType=VARCHAR},
+      marketing_contact = #{marketingContact,jdbcType=VARCHAR},
+      marketing_contact_email = #{marketingContactEmail,jdbcType=VARCHAR},
+      marketing_contact_phone = #{marketingContactPhone,jdbcType=VARCHAR}
+    where social_id = #{socialId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select social_id, facebook_id, twitter_id, instagram_id, linkedin_id, marketing_contact, 
+    marketing_contact_email, marketing_contact_phone
+    from sportzplatform.social
+    where social_id = #{socialId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select social_id, facebook_id, twitter_id, instagram_id, linkedin_id, marketing_contact, 
+    marketing_contact_email, marketing_contact_phone
+    from sportzplatform.social
+  </select>
+</mapper>

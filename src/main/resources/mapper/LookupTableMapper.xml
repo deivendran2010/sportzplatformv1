@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.LookupTableMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.LookupTable">
+    <id column="lookup_type" jdbcType="VARCHAR" property="lookupType" />
+    <id column="lookup_key" jdbcType="VARCHAR" property="lookupKey" />
+    <result column="lookup_value" jdbcType="VARCHAR" property="lookupValue" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from sportzplatform.lookup_table
+    where lookup_type = #{lookupType,jdbcType=VARCHAR}
+      and lookup_key = #{lookupKey,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.skiya.sportzplatform.domain.LookupTable">
+    insert into sportzplatform.lookup_table (lookup_type, lookup_key, lookup_value
+      )
+    values (#{lookupType,jdbcType=VARCHAR}, #{lookupKey,jdbcType=VARCHAR}, #{lookupValue,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.LookupTable">
+    update sportzplatform.lookup_table
+    set lookup_value = #{lookupValue,jdbcType=VARCHAR}
+    where lookup_type = #{lookupType,jdbcType=VARCHAR}
+      and lookup_key = #{lookupKey,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select lookup_type, lookup_key, lookup_value
+    from sportzplatform.lookup_table
+    where lookup_type = #{lookupType,jdbcType=VARCHAR}
+      and lookup_key = #{lookupKey,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select lookup_type, lookup_key, lookup_value
+    from sportzplatform.lookup_table
+  </select>
+</mapper>

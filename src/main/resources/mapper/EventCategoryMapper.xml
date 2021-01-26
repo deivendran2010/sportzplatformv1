@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.EventCategoryMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.EventCategory">
+    <id column="event_category_id" jdbcType="INTEGER" property="eventCategoryId" />
+    <result column="parent_category_id" jdbcType="INTEGER" property="parentCategoryId" />
+    <result column="event_category_name" jdbcType="VARCHAR" property="eventCategoryName" />
+    <result column="event_category_desc" jdbcType="VARCHAR" property="eventCategoryDesc" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.event_category
+    where event_category_id = #{eventCategoryId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="event_category_id" keyProperty="eventCategoryId" parameterType="com.skiya.sportzplatform.domain.EventCategory" useGeneratedKeys="true">
+    insert into sportzplatform.event_category ( event_category_name, 
+      event_category_desc)
+    values ( #{eventCategoryName,jdbcType=VARCHAR}, 
+      #{eventCategoryDesc,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.EventCategory">
+    update sportzplatform.event_category
+    set parent_category_id = #{parentCategoryId,jdbcType=INTEGER},
+      event_category_name = #{eventCategoryName,jdbcType=VARCHAR},
+      event_category_desc = #{eventCategoryDesc,jdbcType=VARCHAR}
+    where event_category_id = #{eventCategoryId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select event_category_id, parent_category_id, event_category_name, event_category_desc
+    from sportzplatform.event_category
+    where event_category_id = #{eventCategoryId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select event_category_id, parent_category_id, event_category_name, event_category_desc
+    from sportzplatform.event_category
+  </select>
+</mapper>

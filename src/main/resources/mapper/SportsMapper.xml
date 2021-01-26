@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.SportsMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.Sports">
+    <id column="sports_id" jdbcType="INTEGER" property="sportsId" />
+    <result column="sports_name" jdbcType="VARCHAR" property="sportsName" />
+    <result column="sports_desc" jdbcType="VARCHAR" property="sportsDesc" />
+    <result column="sports_format" jdbcType="OTHER" property="sportsFormat" />
+    <result column="sports_category" jdbcType="OTHER" property="sportsCategory" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.sports
+    where sports_id = #{sportsId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="sports_id" keyProperty="sportsId" parameterType="com.skiya.sportzplatform.domain.Sports" useGeneratedKeys="true">
+    insert into sportzplatform.sports (sports_name, sports_desc, sports_format, 
+      sports_category)
+    values (#{sportsName,jdbcType=VARCHAR}, #{sportsDesc,jdbcType=VARCHAR}, 
+    #{sportsFormat,jdbcType=OTHER,typeHandler=com.skiya.sportzplatform.common.JsonTypeHandler}, 
+      #{sportsCategory,jdbcType=OTHER,typeHandler=com.skiya.sportzplatform.common.JsonTypeHandler})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.Sports">
+    update sportzplatform.sports
+    set sports_name = #{sportsName,jdbcType=VARCHAR},
+      sports_desc = #{sportsDesc,jdbcType=VARCHAR},
+      sports_format = #{sportsFormat,jdbcType=OTHER,typeHandler=com.skiya.sportzplatform.common.JsonTypeHandler},
+      sports_category = #{sportsCategory,jdbcType=OTHER,typeHandler=com.skiya.sportzplatform.common.JsonTypeHandler}
+    where sports_id = #{sportsId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select sports_id, sports_name, sports_desc, sports_format, sports_category
+    from sportzplatform.sports
+    where sports_id = #{sportsId,jdbcType=INTEGER}
+  </select>
+  <select id="selectBySportsName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select sports_id, sports_name, sports_desc, sports_format, sports_category
+    from sportzplatform.sports
+    where sports_name = #{sportsName,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select sports_id, sports_name, sports_desc, sports_format, sports_category
+    from sportzplatform.sports
+  </select>
+</mapper>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <context id="context1" targetRuntime="MyBatis3Simple">
+    <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+    
+    <plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin" />
+    
+    <plugin type="org.mybatis.generator.plugins.MapperConfigPlugin">
+    	<property name="fileName" value="mybatis-config.xml"/>
+    	<property name="targetPackage" value="mapper"/>
+    	<property name="targetProject" value="sportzplatform/src/main/resources"/>
+    </plugin>
+    
+    <commentGenerator>
+    	<property name="suppressAllComments" value="true" />
+    </commentGenerator>
+    
+    <jdbcConnection connectionURL="jdbc:postgresql://localhost:5432/sportzplatform?currentSchema=sportzplatform" driverClass="org.postgresql.Driver" password="$portz042020" userId="sportzplatform_user" />
+    
+    <javaModelGenerator targetPackage="com.skiya.sportzplatform.domain" targetProject="sportzplatform"  />
+    <sqlMapGenerator targetPackage="mapper" targetProject="sportzplatform/src/main/resources"/>
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.skiya.sportzplatform.mapper" targetProject="sportzplatform"/>            
+   <!--   <table  schema="sportzplatform" tableName="address">
+    	 <generatedKey column="address_id" sqlStatement="JDBC" identity="true" />
+    </table>
+     <table  schema="sportzplatform" tableName="social">
+    	<generatedKey column="social_id" sqlStatement="JDBC" identity="true" />
+    </table> 
+    <table  schema="sportzplatform" tableName="company">
+    	<generatedKey column="company_id" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table  schema="sportzplatform" tableName="event_category">
+    	<generatedKey column="event_category_id" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table  schema="sportzplatform" tableName="user">
+    	<generatedKey column="user_id" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table  schema="sportzplatform" tableName="organizer">
+    	<generatedKey column="organizer_id" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table schema="sportzplatform" tableName="lookup_type">
+    	<generatedKey column="lookup_type" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table schema="sportzplatform" tableName="lookup_table">
+    	
+    </table>
+     <table  schema="sportzplatform" tableName="team_player">
+    	<generatedKey column="team_player_id" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table  schema="sportzplatform" tableName="sports">
+    	<generatedKey column="sports_id" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table  schema="sportzplatform" tableName="events">
+    	<generatedKey column="event_id" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table  schema="sportzplatform" tableName="tournaments">
+    	<generatedKey column="tournament_id" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table  schema="sportzplatform" tableName="event_organizer">
+    	<generatedKey column="event_organizer_id" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table  schema="sportzplatform" tableName="tournament_categories">
+    	<generatedKey column="tournament_category_id" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table  schema="sportzplatform" tableName="tournament_registrations">
+    	<generatedKey column="registration_id" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table  schema="sportzplatform" tableName="tournament_groups">
+    	<generatedKey column="group_id" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table  schema="sportzplatform" tableName="tournament_player_registration">
+    	<generatedKey column="tour_player_reg_id" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table  schema="sportzplatform" tableName="follower">
+    	<generatedKey column="follower_id" sqlStatement="JDBC" identity="true" />
+    </table>-->
+    <table  schema="sportzplatform" tableName="featured">
+    	<generatedKey column="featured_id" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table  schema="sportzplatform" tableName="event_org">
+    	<generatedKey column="event_organizer_id" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table  schema="sportzplatform" tableName="event_category">
+    	<generatedKey column="event_category_id" sqlStatement="JDBC" identity="true" />
+    </table>
+     <table  schema="sportzplatform" tableName="events">
+    	<generatedKey column="event_id" sqlStatement="JDBC" identity="true" />
+    </table>
+  </context>
+</generatorConfiguration>

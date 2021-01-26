@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.AddressMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.Address">
+    <id column="address_id" jdbcType="INTEGER" property="addressId" />
+    <result column="address_line1" jdbcType="VARCHAR" property="addressLine1" />
+    <result column="address_line2" jdbcType="VARCHAR" property="addressLine2" />
+    <result column="address_line3" jdbcType="VARCHAR" property="addressLine3" />
+    <result column="postal_code" jdbcType="VARCHAR" property="postalCode" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="latitude" jdbcType="VARCHAR" property="latitude" />
+    <result column="longtitude" jdbcType="VARCHAR" property="longtitude" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.address
+    where address_id = #{addressId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="address_id" keyProperty="addressId" parameterType="com.skiya.sportzplatform.domain.Address" useGeneratedKeys="true">
+    insert into sportzplatform.address (address_line1, address_line2, address_line3, 
+      postal_code, city, state, 
+      country, latitude, longtitude
+      )
+    values (#{addressLine1,jdbcType=VARCHAR}, #{addressLine2,jdbcType=VARCHAR}, #{addressLine3,jdbcType=VARCHAR}, 
+      #{postalCode,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, 
+      #{country,jdbcType=VARCHAR}, #{latitude,jdbcType=VARCHAR}, #{longtitude,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.Address">
+    update sportzplatform.address
+    set address_line1 = #{addressLine1,jdbcType=VARCHAR},
+      address_line2 = #{addressLine2,jdbcType=VARCHAR},
+      address_line3 = #{addressLine3,jdbcType=VARCHAR},
+      postal_code = #{postalCode,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      state = #{state,jdbcType=VARCHAR},
+      country = #{country,jdbcType=VARCHAR},
+      latitude = #{latitude,jdbcType=VARCHAR},
+      longtitude = #{longtitude,jdbcType=VARCHAR}
+    where address_id = #{addressId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select address_id, address_line1, address_line2, address_line3, postal_code, city, 
+    state, country, latitude, longtitude
+    from sportzplatform.address
+    where address_id = #{addressId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select address_id, address_line1, address_line2, address_line3, postal_code, city, 
+    state, country, latitude, longtitude
+    from sportzplatform.address
+  </select>
+</mapper>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.EventOrgMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.EventOrg">
+    <id column="event_organizer_id" jdbcType="INTEGER" property="eventOrganizerId" />
+    <result column="primary_contact_name" jdbcType="VARCHAR" property="primaryContactName" />
+    <result column="primary_contact_company_name" jdbcType="VARCHAR" property="primaryContactCompanyName" />
+    <result column="primary_contact_email" jdbcType="VARCHAR" property="primaryContactEmail" />
+    <result column="primary_contact_phone" jdbcType="INTEGER" property="primaryContactPhone" />
+    
+    <result column="secondary_contact_name" jdbcType="VARCHAR" property="secondaryContactName" />
+    <result column="secondary_contact_company_name" jdbcType="VARCHAR" property="secondaryContactCompanyName" />
+    <result column="secondary_contact_email" jdbcType="VARCHAR" property="secondaryContactEmail" />
+    <result column="secondary_contact_phone" jdbcType="INTEGER" property="secondaryContactPhone" />
+    
+  </resultMap>
+ 
+  <insert id="insert" keyColumn="event_organizer_id" keyProperty="eventOrganizerId" parameterType="com.skiya.sportzplatform.domain.EventOrg" useGeneratedKeys="true">
+    insert into sportzplatform.event_org (primary_contact_name, primary_contact_company_name,primary_contact_email,primary_contact_phone,secondary_contact_name,secondary_contact_company_name,secondary_contact_email,secondary_contact_phone)
+    values (#{primaryContactName,jdbcType=VARCHAR}, #{primaryContactCompanyName,jdbcType=VARCHAR}, #{primaryContactEmail,jdbcType=VARCHAR}, #{primaryContactPhone,jdbcType=INTEGER},#{secondaryContactName,jdbcType=VARCHAR},#{secondaryContactCompanyName,jdbcType=VARCHAR},#{secondaryContactEmail,jdbcType=VARCHAR},#{secondaryContactPhone,jdbcType=INTEGER})
+  </insert>
+  
+  
+   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select event_organizer_id,primary_contact_name, primary_contact_company_name,primary_contact_email,primary_contact_phone,secondary_contact_name,secondary_contact_company_name,secondary_contact_email,secondary_contact_phone
+    from sportzplatform.event_org
+    where event_organizer_id = #{eventOrganizerId,jdbcType=INTEGER}
+  </select>
+  
+  
+  <select id="selectByprimaryContactName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select event_organizer_id,primary_contact_name, primary_contact_company_name,primary_contact_email,primary_contact_phone,secondary_contact_name,secondary_contact_company_name,secondary_contact_email,secondary_contact_phone
+    from sportzplatform.event_org
+    where primary_contact_name = #{primaryContactName,jdbcType=INTEGER}
+  </select>
+  
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.event_org
+    where event_organizer_id = #{eventOrganizerId,jdbcType=INTEGER}
+  </delete>
+  
+  
+  <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.EventOrg">
+    update sportzplatform.event_org
+    set primary_contact_name = #{primaryContactName,jdbcType=VARCHAR},
+      primary_contact_company_name = #{primaryContactCompanyName,jdbcType=VARCHAR},
+      primary_contact_email = #{primaryContactEmail,jdbcType=VARCHAR},
+      primary_contact_phone = #{primaryContactPhone,jdbcType=INTEGER},
+      
+      secondary_contact_name = #{secondaryContactName,jdbcType=VARCHAR},
+      secondary_contact_company_name = #{secondaryContactCompanyName,jdbcType=VARCHAR},
+      secondary_contact_email = #{secondaryContactEmail,jdbcType=VARCHAR},
+      secondary_contact_phone = #{secondaryContactPhone,jdbcType=INTEGER}
+    
+      
+      
+      
+    where event_organizer_id = #{eventOrganizerId,jdbcType=INTEGER}
+  </update>
+  
+  <select id="selectAll" resultMap="BaseResultMap">
+    select event_organizer_id,primary_contact_name, primary_contact_company_name,primary_contact_email,primary_contact_phone,secondary_contact_name,secondary_contact_company_name,secondary_contact_email,secondary_contact_phone
+    from sportzplatform.event_org
+  </select>
+  
+  
+</mapper>

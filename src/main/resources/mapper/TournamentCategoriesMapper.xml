@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.TournamentCategoriesMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.TournamentCategories">
+    <id column="tournament_category_id" jdbcType="INTEGER" property="tournamentCategoryId" />
+    <result column="tournament_refid" jdbcType="INTEGER" property="tournamentRefid" />
+    <result column="tournament_category" jdbcType="VARCHAR" property="tournamentCategory" />
+    <result column="parent_category_id" jdbcType="INTEGER" property="parentCategoryId" />
+    <result column="tournament_format" jdbcType="VARCHAR" property="tournamentFormat" />
+    <result column="reg_fee" jdbcType="NUMERIC" property="regFee" />
+    <result column="minimum_players" jdbcType="INTEGER" property="minimumPlayers" />
+    <result column="maximum_players" jdbcType="INTEGER" property="maximumPlayers" />
+    <result column="min_reg_count" jdbcType="INTEGER" property="minRegCount" />
+    <result column="max_reg_count" jdbcType="INTEGER" property="maxRegCount" />
+    <result column="age_restriction" jdbcType="VARCHAR" property="ageRestriction" />
+    <result column="sex_restriction" jdbcType="VARCHAR" property="sexRestriction" />
+    <result column="average_age" jdbcType="VARCHAR" property="averageAge" />
+    <result column="tournament_config" jdbcType="OTHER" property="tournamentConfig" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.tournament_categories
+    where tournament_category_id = #{tournamentCategoryId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="tournament_category_id" keyProperty="tournamentCategoryId" parameterType="com.skiya.sportzplatform.domain.TournamentCategories" useGeneratedKeys="true">
+    insert into sportzplatform.tournament_categories (tournament_refid, tournament_category, 
+      parent_category_id, tournament_format, reg_fee, 
+      minimum_players, maximum_players, min_reg_count,max_reg_count,age_restriction, 
+      sex_restriction, average_age,tournament_config)
+    values (#{tournamentRefid,jdbcType=INTEGER}, #{tournamentCategory,jdbcType=VARCHAR}, 
+      #{parentCategoryId,jdbcType=INTEGER}, #{tournamentFormat,jdbcType=VARCHAR}, #{regFee,jdbcType=NUMERIC}, 
+      #{minimumPlayers,jdbcType=INTEGER}, #{maximumPlayers,jdbcType=INTEGER},#{minRegCount,jdbcType=INTEGER}, 
+      #{maxRegCount,jdbcType=INTEGER}, #{ageRestriction,jdbcType=VARCHAR}, 
+      #{sexRestriction,jdbcType=VARCHAR}, #{averageAge,jdbcType=VARCHAR},
+      #{tournamentConfig,jdbcType=OTHER,typeHandler=com.skiya.sportzplatform.common.JsonTypeHandler} )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.TournamentCategories">
+    update sportzplatform.tournament_categories
+    set tournament_refid = #{tournamentRefid,jdbcType=INTEGER},
+      tournament_category = #{tournamentCategory,jdbcType=VARCHAR},
+      parent_category_id = #{parentCategoryId,jdbcType=INTEGER},
+      tournament_format = #{tournamentFormat,jdbcType=VARCHAR},
+      reg_fee = #{regFee,jdbcType=NUMERIC},
+      minimum_players = #{minimumPlayers,jdbcType=INTEGER},
+      maximum_players = #{maximumPlayers,jdbcType=INTEGER},
+      min_reg_count = #{minRegCount,jdbcType=INTEGER},
+      max_reg_count = #{maxRegCount,jdbcType=INTEGER},
+      age_restriction = #{ageRestriction,jdbcType=VARCHAR},
+      sex_restriction = #{sexRestriction,jdbcType=VARCHAR},
+      average_age = #{averageAge,jdbcType=VARCHAR},
+      tournament_config = #{tournamentConfig,jdbcType=OTHER,typeHandler=com.skiya.sportzplatform.common.JsonTypeHandler}
+    where tournament_category_id = #{tournamentCategoryId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select tournament_category_id, tournament_refid, tournament_category, parent_category_id, 
+    tournament_format, reg_fee, minimum_players, maximum_players, min_reg_count,max_reg_count,age_restriction, 
+    sex_restriction, average_age,tournament_config
+    from sportzplatform.tournament_categories
+    where tournament_category_id = #{tournamentCategoryId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select tournament_category_id, tournament_refid, tournament_category, parent_category_id, 
+    tournament_format, reg_fee, minimum_players, maximum_players, min_reg_count,max_reg_count,
+    age_restriction, sex_restriction, average_age,tournament_config
+    from sportzplatform.tournament_categories
+  </select>
+</mapper>

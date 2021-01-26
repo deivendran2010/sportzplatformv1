@@ -1,0 +1,314 @@
+2020-04-17 21:48:37,599 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /token/resetPassword at position 1 of 12 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-04-17 21:48:37,601 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /token/resetPassword at position 2 of 12 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-04-17 21:48:37,601 DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository [http-nio-7777-exec-9] No HttpSession currently exists
+2020-04-17 21:48:37,601 DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository [http-nio-7777-exec-9] No SecurityContext was available from the HttpSession: null. A new one will be created.
+2020-04-17 21:48:37,602 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /token/resetPassword at position 3 of 12 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-04-17 21:48:37,602 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /token/resetPassword at position 4 of 12 in additional filter chain; firing Filter: 'CorsFilter'
+2020-04-17 21:48:37,608 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-7777-exec-9] Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-04-17 21:48:37,609 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /token/resetPassword at position 5 of 12 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-04-17 21:48:37,610 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-9] Trying to match using Ant [pattern='/logout', GET]
+2020-04-17 21:48:37,610 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-9] Checking match of request : '/token/resetPassword'; against '/logout'
+2020-04-17 21:48:37,611 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-9] Trying to match using Ant [pattern='/logout', POST]
+2020-04-17 21:48:37,611 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-9] Request 'GET /token/resetPassword' doesn't match 'POST /logout'
+2020-04-17 21:48:37,611 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-9] Trying to match using Ant [pattern='/logout', PUT]
+2020-04-17 21:48:37,611 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-9] Request 'GET /token/resetPassword' doesn't match 'PUT /logout'
+2020-04-17 21:48:37,612 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-9] Trying to match using Ant [pattern='/logout', DELETE]
+2020-04-17 21:48:37,612 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-9] Request 'GET /token/resetPassword' doesn't match 'DELETE /logout'
+2020-04-17 21:48:37,612 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-9] No matches found
+2020-04-17 21:48:37,613 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /token/resetPassword at position 6 of 12 in additional filter chain; firing Filter: 'JWTAuthenticationFilter'
+2020-04-17 21:48:37,613 WARN com.skiya.sportzplatform.security.JWTAuthenticationFilter [http-nio-7777-exec-9] couldn't find bearer string, will ignore the header
+2020-04-17 21:48:37,614 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /token/resetPassword at position 7 of 12 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-04-17 21:48:37,615 DEBUG org.springframework.security.web.savedrequest.HttpSessionRequestCache [http-nio-7777-exec-9] saved request doesn't match
+2020-04-17 21:48:37,616 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /token/resetPassword at position 8 of 12 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-04-17 21:48:37,616 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /token/resetPassword at position 9 of 12 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-04-17 21:48:37,617 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-7777-exec-9] Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3ab0502d: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-04-17 21:48:37,617 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /token/resetPassword at position 10 of 12 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-04-17 21:48:37,619 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /token/resetPassword at position 11 of 12 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-04-17 21:48:37,619 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /token/resetPassword at position 12 of 12 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-04-17 21:48:37,620 DEBUG org.springframework.security.access.intercept.AbstractSecurityInterceptor [http-nio-7777-exec-9] Secure object: FilterInvocation: URL: /token/resetPassword; Attributes: [permitAll]
+2020-04-17 21:48:37,620 DEBUG org.springframework.security.access.intercept.AbstractSecurityInterceptor [http-nio-7777-exec-9] Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3ab0502d: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-04-17 21:48:37,621 DEBUG org.springframework.security.access.vote.AffirmativeBased [http-nio-7777-exec-9] Voter: org.springframework.security.web.access.expression.WebExpressionVoter@306d3cf8, returned: 1
+2020-04-17 21:48:37,621 DEBUG org.springframework.security.access.intercept.AbstractSecurityInterceptor [http-nio-7777-exec-9] Authorization successful
+2020-04-17 21:48:37,622 DEBUG org.springframework.security.access.intercept.AbstractSecurityInterceptor [http-nio-7777-exec-9] RunAsManager did not change Authentication object
+2020-04-17 21:48:37,622 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /token/resetPassword reached end of additional filter chain; proceeding with original chain
+2020-04-17 21:48:37,623 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-9] GET "/token/resetPassword", parameters={}
+2020-04-17 21:48:37,625 DEBUG org.springframework.security.web.header.writers.HstsHeaderWriter [http-nio-7777-exec-9] Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@24f50935
+2020-04-17 21:48:37,626 DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionResponseWrapper [http-nio-7777-exec-9] SecurityContext is empty or contents are anonymous - context will not be stored in HttpSession.
+2020-04-17 21:48:37,627 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-7777-exec-9] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-04-17 21:48:37,628 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-9] Completed 405 METHOD_NOT_ALLOWED
+2020-04-17 21:48:37,628 DEBUG org.springframework.security.web.access.ExceptionTranslationFilter [http-nio-7777-exec-9] Chain processed normally
+2020-04-17 21:48:37,628 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-7777-exec-9] SecurityContextHolder now cleared, as request processing completed
+2020-04-17 21:48:37,629 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /error at position 1 of 12 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-04-17 21:48:37,629 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /error at position 2 of 12 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-04-17 21:48:37,630 DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository [http-nio-7777-exec-9] No HttpSession currently exists
+2020-04-17 21:48:37,630 DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository [http-nio-7777-exec-9] No SecurityContext was available from the HttpSession: null. A new one will be created.
+2020-04-17 21:48:37,630 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /error at position 3 of 12 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-04-17 21:48:37,630 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /error at position 4 of 12 in additional filter chain; firing Filter: 'CorsFilter'
+2020-04-17 21:48:37,630 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /error at position 5 of 12 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-04-17 21:48:37,631 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-9] Trying to match using Ant [pattern='/logout', GET]
+2020-04-17 21:48:37,631 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-9] Checking match of request : '/error'; against '/logout'
+2020-04-17 21:48:37,631 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-9] Trying to match using Ant [pattern='/logout', POST]
+2020-04-17 21:48:37,631 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-9] Request 'GET /error' doesn't match 'POST /logout'
+2020-04-17 21:48:37,631 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-9] Trying to match using Ant [pattern='/logout', PUT]
+2020-04-17 21:48:37,631 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-9] Request 'GET /error' doesn't match 'PUT /logout'
+2020-04-17 21:48:37,631 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-9] Trying to match using Ant [pattern='/logout', DELETE]
+2020-04-17 21:48:37,631 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-9] Request 'GET /error' doesn't match 'DELETE /logout'
+2020-04-17 21:48:37,631 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-9] No matches found
+2020-04-17 21:48:37,631 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /error at position 6 of 12 in additional filter chain; firing Filter: 'JWTAuthenticationFilter'
+2020-04-17 21:48:37,633 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /error at position 7 of 12 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-04-17 21:48:37,633 DEBUG org.springframework.security.web.savedrequest.HttpSessionRequestCache [http-nio-7777-exec-9] saved request doesn't match
+2020-04-17 21:48:37,633 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /error at position 8 of 12 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-04-17 21:48:37,633 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /error at position 9 of 12 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-04-17 21:48:37,633 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-7777-exec-9] Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3ab0502d: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-04-17 21:48:37,634 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /error at position 10 of 12 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-04-17 21:48:37,634 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /error at position 11 of 12 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-04-17 21:48:37,634 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /error at position 12 of 12 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-04-17 21:48:37,634 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-9] /error reached end of additional filter chain; proceeding with original chain
+2020-04-17 21:48:37,634 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-9] "ERROR" dispatch for GET "/error", parameters={}
+2020-04-17 21:48:37,635 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-7777-exec-9] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2020-04-17 21:48:37,637 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-7777-exec-9] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-17 21:48:37,637 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-9] Writing [{timestamp=Fri Apr 17 21:48:37 SGT 2020, status=405, error=Method Not Allowed, message=Request metho (truncated)...]
+2020-04-17 21:48:37,640 DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionResponseWrapper [http-nio-7777-exec-9] SecurityContext is empty or contents are anonymous - context will not be stored in HttpSession.
+2020-04-17 21:48:37,641 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-9] Exiting from "ERROR" dispatch, status 405
+2020-04-17 21:48:37,641 DEBUG org.springframework.security.web.access.ExceptionTranslationFilter [http-nio-7777-exec-9] Chain processed normally
+2020-04-17 21:48:37,641 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-7777-exec-9] SecurityContextHolder now cleared, as request processing completed
+2020-04-17 21:48:48,710 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /token/resetPassword at position 1 of 12 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-04-17 21:48:48,711 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /token/resetPassword at position 2 of 12 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-04-17 21:48:48,711 DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository [http-nio-7777-exec-10] No HttpSession currently exists
+2020-04-17 21:48:48,711 DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository [http-nio-7777-exec-10] No SecurityContext was available from the HttpSession: null. A new one will be created.
+2020-04-17 21:48:48,712 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /token/resetPassword at position 3 of 12 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-04-17 21:48:48,712 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /token/resetPassword at position 4 of 12 in additional filter chain; firing Filter: 'CorsFilter'
+2020-04-17 21:48:48,713 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-7777-exec-10] Mapped to com.skiya.sportzplatform.web.rest.AuthenticationResource#resetPassword(LoginUser)
+2020-04-17 21:48:48,713 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /token/resetPassword at position 5 of 12 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-04-17 21:48:48,713 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-10] Trying to match using Ant [pattern='/logout', GET]
+2020-04-17 21:48:48,713 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-10] Request 'POST /token/resetPassword' doesn't match 'GET /logout'
+2020-04-17 21:48:48,714 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-10] Trying to match using Ant [pattern='/logout', POST]
+2020-04-17 21:48:48,714 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-10] Checking match of request : '/token/resetPassword'; against '/logout'
+2020-04-17 21:48:48,714 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-10] Trying to match using Ant [pattern='/logout', PUT]
+2020-04-17 21:48:48,714 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-10] Request 'POST /token/resetPassword' doesn't match 'PUT /logout'
+2020-04-17 21:48:48,714 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-10] Trying to match using Ant [pattern='/logout', DELETE]
+2020-04-17 21:48:48,715 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-10] Request 'POST /token/resetPassword' doesn't match 'DELETE /logout'
+2020-04-17 21:48:48,715 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-10] No matches found
+2020-04-17 21:48:48,715 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /token/resetPassword at position 6 of 12 in additional filter chain; firing Filter: 'JWTAuthenticationFilter'
+2020-04-17 21:48:48,715 WARN com.skiya.sportzplatform.security.JWTAuthenticationFilter [http-nio-7777-exec-10] couldn't find bearer string, will ignore the header
+2020-04-17 21:48:48,718 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /token/resetPassword at position 7 of 12 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-04-17 21:48:48,718 DEBUG org.springframework.security.web.savedrequest.HttpSessionRequestCache [http-nio-7777-exec-10] saved request doesn't match
+2020-04-17 21:48:48,718 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /token/resetPassword at position 8 of 12 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-04-17 21:48:48,718 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /token/resetPassword at position 9 of 12 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-04-17 21:48:48,719 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-7777-exec-10] Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3ab0502d: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-04-17 21:48:48,719 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /token/resetPassword at position 10 of 12 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-04-17 21:48:48,719 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /token/resetPassword at position 11 of 12 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-04-17 21:48:48,719 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /token/resetPassword at position 12 of 12 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-04-17 21:48:48,720 DEBUG org.springframework.security.access.intercept.AbstractSecurityInterceptor [http-nio-7777-exec-10] Secure object: FilterInvocation: URL: /token/resetPassword; Attributes: [permitAll]
+2020-04-17 21:48:48,720 DEBUG org.springframework.security.access.intercept.AbstractSecurityInterceptor [http-nio-7777-exec-10] Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3ab0502d: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-04-17 21:48:48,720 DEBUG org.springframework.security.access.vote.AffirmativeBased [http-nio-7777-exec-10] Voter: org.springframework.security.web.access.expression.WebExpressionVoter@306d3cf8, returned: 1
+2020-04-17 21:48:48,721 DEBUG org.springframework.security.access.intercept.AbstractSecurityInterceptor [http-nio-7777-exec-10] Authorization successful
+2020-04-17 21:48:48,721 DEBUG org.springframework.security.access.intercept.AbstractSecurityInterceptor [http-nio-7777-exec-10] RunAsManager did not change Authentication object
+2020-04-17 21:48:48,722 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /token/resetPassword reached end of additional filter chain; proceeding with original chain
+2020-04-17 21:48:48,724 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-10] POST "/token/resetPassword", parameters={}
+2020-04-17 21:48:48,725 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-7777-exec-10] Mapped to com.skiya.sportzplatform.web.rest.AuthenticationResource#resetPassword(LoginUser)
+2020-04-17 21:48:48,726 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-10] Read "application/json;charset=UTF-8" to [com.skiya.sportzplatform.dto.LoginUser@9e99ffae]
+2020-04-17 21:48:48,728 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-10] Failed to complete request: java.lang.NullPointerException: Reset Token is mandatory
+2020-04-17 21:48:48,728 DEBUG org.springframework.security.web.header.writers.HstsHeaderWriter [http-nio-7777-exec-10] Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@24f50935
+2020-04-17 21:48:48,728 DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionResponseWrapper [http-nio-7777-exec-10] SecurityContext is empty or contents are anonymous - context will not be stored in HttpSession.
+2020-04-17 21:48:48,729 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-7777-exec-10] SecurityContextHolder now cleared, as request processing completed
+2020-04-17 21:48:48,730 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-7777-exec-10] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException: Reset Token is mandatory] with root cause
+java.lang.NullPointerException: Reset Token is mandatory
+	at java.base/java.util.Objects.requireNonNull(Objects.java:246)
+	at com.skiya.sportzplatform.service.UserService.getUserByToken(UserService.java:71)
+	at com.skiya.sportzplatform.service.UserService$$FastClassBySpringCGLIB$$dbfc2f1e.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:685)
+	at com.skiya.sportzplatform.service.UserService$$EnhancerBySpringCGLIB$$50399e77.getUserByToken(<generated>)
+	at com.skiya.sportzplatform.web.rest.AuthenticationResource.resetPassword(AuthenticationResource.java:84)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at com.skiya.sportzplatform.security.JWTAuthenticationFilter.doFilterInternal(JWTAuthenticationFilter.java:63)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2020-04-17 21:48:48,730 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /error at position 1 of 12 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /error at position 2 of 12 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository [http-nio-7777-exec-10] No HttpSession currently exists
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository [http-nio-7777-exec-10] No SecurityContext was available from the HttpSession: null. A new one will be created.
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /error at position 3 of 12 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /error at position 4 of 12 in additional filter chain; firing Filter: 'CorsFilter'
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /error at position 5 of 12 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-10] Trying to match using Ant [pattern='/logout', GET]
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-10] Request 'POST /error' doesn't match 'GET /logout'
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-10] Trying to match using Ant [pattern='/logout', POST]
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-10] Checking match of request : '/error'; against '/logout'
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-10] Trying to match using Ant [pattern='/logout', PUT]
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-10] Request 'POST /error' doesn't match 'PUT /logout'
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-10] Trying to match using Ant [pattern='/logout', DELETE]
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-10] Request 'POST /error' doesn't match 'DELETE /logout'
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-10] No matches found
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /error at position 6 of 12 in additional filter chain; firing Filter: 'JWTAuthenticationFilter'
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /error at position 7 of 12 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.savedrequest.HttpSessionRequestCache [http-nio-7777-exec-10] saved request doesn't match
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /error at position 8 of 12 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /error at position 9 of 12 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-7777-exec-10] Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3ab0502d: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-04-17 21:48:48,731 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /error at position 10 of 12 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-04-17 21:48:48,735 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /error at position 11 of 12 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-04-17 21:48:48,735 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /error at position 12 of 12 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-04-17 21:48:48,735 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-10] /error reached end of additional filter chain; proceeding with original chain
+2020-04-17 21:48:48,735 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-10] "ERROR" dispatch for POST "/error", parameters={}
+2020-04-17 21:48:48,735 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-7777-exec-10] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2020-04-17 21:48:48,735 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-7777-exec-10] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-17 21:48:48,735 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-10] Writing [{timestamp=Fri Apr 17 21:48:48 SGT 2020, status=500, error=Internal Server Error, message=Reset Toke (truncated)...]
+2020-04-17 21:48:48,739 DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionResponseWrapper [http-nio-7777-exec-10] SecurityContext is empty or contents are anonymous - context will not be stored in HttpSession.
+2020-04-17 21:48:48,741 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-10] Exiting from "ERROR" dispatch, status 500
+2020-04-17 21:48:48,741 DEBUG org.springframework.security.web.access.ExceptionTranslationFilter [http-nio-7777-exec-10] Chain processed normally
+2020-04-17 21:48:48,741 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-7777-exec-10] SecurityContextHolder now cleared, as request processing completed
+2020-04-17 21:49:02,752 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-2] /token/resetPassword at position 1 of 12 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-04-17 21:49:02,753 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-2] /token/resetPassword at position 2 of 12 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-04-17 21:49:02,753 DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository [http-nio-7777-exec-2] No HttpSession currently exists
+2020-04-17 21:49:02,753 DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository [http-nio-7777-exec-2] No SecurityContext was available from the HttpSession: null. A new one will be created.
+2020-04-17 21:49:02,753 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-2] /token/resetPassword at position 3 of 12 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-04-17 21:49:02,753 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-2] /token/resetPassword at position 4 of 12 in additional filter chain; firing Filter: 'CorsFilter'
+2020-04-17 21:49:02,754 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-7777-exec-2] Mapped to com.skiya.sportzplatform.web.rest.AuthenticationResource#resetPassword(LoginUser)
+2020-04-17 21:49:02,754 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-2] /token/resetPassword at position 5 of 12 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-04-17 21:49:02,755 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-2] Trying to match using Ant [pattern='/logout', GET]
+2020-04-17 21:49:02,755 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-2] Request 'POST /token/resetPassword' doesn't match 'GET /logout'
+2020-04-17 21:49:02,755 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-2] Trying to match using Ant [pattern='/logout', POST]
+2020-04-17 21:49:02,755 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-2] Checking match of request : '/token/resetPassword'; against '/logout'
+2020-04-17 21:49:02,756 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-2] Trying to match using Ant [pattern='/logout', PUT]
+2020-04-17 21:49:02,756 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-2] Request 'POST /token/resetPassword' doesn't match 'PUT /logout'
+2020-04-17 21:49:02,756 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-2] Trying to match using Ant [pattern='/logout', DELETE]
+2020-04-17 21:49:02,756 DEBUG org.springframework.security.web.util.matcher.AntPathRequestMatcher [http-nio-7777-exec-2] Request 'POST /token/resetPassword' doesn't match 'DELETE /logout'
+2020-04-17 21:49:02,756 DEBUG org.springframework.security.web.util.matcher.OrRequestMatcher [http-nio-7777-exec-2] No matches found
+2020-04-17 21:49:02,756 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-2] /token/resetPassword at position 6 of 12 in additional filter chain; firing Filter: 'JWTAuthenticationFilter'
+2020-04-17 21:49:02,757 WARN com.skiya.sportzplatform.security.JWTAuthenticationFilter [http-nio-7777-exec-2] couldn't find bearer string, will ignore the header
+2020-04-17 21:49:02,757 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-2] /token/resetPassword at position 7 of 12 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-04-17 21:49:02,757 DEBUG org.springframework.security.web.savedrequest.HttpSessionRequestCache [http-nio-7777-exec-2] saved request doesn't match
+2020-04-17 21:49:02,758 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-2] /token/resetPassword at position 8 of 12 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-04-17 21:49:02,758 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-2] /token/resetPassword at position 9 of 12 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-04-17 21:49:02,758 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-7777-exec-2] Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3ab0502d: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-04-17 21:49:02,758 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-2] /token/resetPassword at position 10 of 12 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-04-17 21:49:02,759 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-2] /token/resetPassword at position 11 of 12 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-04-17 21:49:02,759 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-2] /token/resetPassword at position 12 of 12 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-04-17 21:49:02,760 DEBUG org.springframework.security.access.intercept.AbstractSecurityInterceptor [http-nio-7777-exec-2] Secure object: FilterInvocation: URL: /token/resetPassword; Attributes: [permitAll]
+2020-04-17 21:49:02,760 DEBUG org.springframework.security.access.intercept.AbstractSecurityInterceptor [http-nio-7777-exec-2] Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3ab0502d: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-04-17 21:49:02,760 DEBUG org.springframework.security.access.vote.AffirmativeBased [http-nio-7777-exec-2] Voter: org.springframework.security.web.access.expression.WebExpressionVoter@306d3cf8, returned: 1
+2020-04-17 21:49:02,761 DEBUG org.springframework.security.access.intercept.AbstractSecurityInterceptor [http-nio-7777-exec-2] Authorization successful
+2020-04-17 21:49:02,761 DEBUG org.springframework.security.access.intercept.AbstractSecurityInterceptor [http-nio-7777-exec-2] RunAsManager did not change Authentication object
+2020-04-17 21:49:02,761 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-7777-exec-2] /token/resetPassword reached end of additional filter chain; proceeding with original chain
+2020-04-17 21:49:02,761 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-2] POST "/token/resetPassword", parameters={}
+2020-04-17 21:49:02,762 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-7777-exec-2] Mapped to com.skiya.sportzplatform.web.rest.AuthenticationResource#resetPassword(LoginUser)
+2020-04-17 21:49:02,763 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-2] Read "application/json;charset=UTF-8" to [com.skiya.sportzplatform.dto.LoginUser@67d03198]
+2020-04-17 21:49:02,764 DEBUG org.springframework.jdbc.datasource.DataSourceUtils [http-nio-7777-exec-2] Fetching JDBC Connection from DataSource
+2020-04-17 21:49:02,765 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-2] ==>  Preparing: select user_id, first_name, last_name, middle_name, user_profile_img, user_email, user_phone, user_password, last_login_date, provider_id, user_status, reset_token, alternate_name, user_img, user_dob, user_passport_nric, user_nationality, user_ethinicity, user_social_refid, user_address_refid from sportzplatform.users where reset_token = ? 
+2020-04-17 21:49:02,765 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-2] ==> Parameters: 68c46dd3-7c23-474b-bad7-c120771bee29(String)
+2020-04-17 21:49:02,768 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-2] <==      Total: 1
+2020-04-17 21:49:02,768 DEBUG org.springframework.transaction.support.AbstractPlatformTransactionManager [http-nio-7777-exec-2] Creating new transaction with name [com.skiya.sportzplatform.service.UserService.updateUser]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2020-04-17 21:49:02,770 DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager [http-nio-7777-exec-2] Acquired Connection [HikariProxyConnection@1868920585 wrapping org.postgresql.jdbc.PgConnection@1d924e10] for JDBC transaction
+2020-04-17 21:49:02,770 DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager [http-nio-7777-exec-2] Switching JDBC Connection [HikariProxyConnection@1868920585 wrapping org.postgresql.jdbc.PgConnection@1d924e10] to manual commit
+2020-04-17 21:49:02,770 DEBUG com.skiya.sportzplatform.service.UserService [http-nio-7777-exec-2] ÜserDTO....User [Hash = -1178751514, userId=1, firstName=Siva, lastName=Sankaran, middleName=null, userProfileImg=null, userEmail=siva77@gmail.com, userPhone=87778666, userPassword=null, lastLoginDate=null, providerId=null, userStatus=AC, resetToken=null, alternateName=null, userImg=null, userDob=null, userPassportNric=null, userNationality=null, userEthinicity=null, userSocialRefid=null, userAddressRefid=null]
+2020-04-17 21:49:02,771 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-2] ==>  Preparing: select user_id, first_name, last_name, middle_name, user_profile_img, user_email, user_phone, user_password, last_login_date, provider_id, user_status, reset_token, alternate_name, user_img, user_dob, user_passport_nric, user_nationality, user_ethinicity, user_social_refid, user_address_refid from sportzplatform.users where user_id = ? 
+2020-04-17 21:49:02,771 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-2] ==> Parameters: 1(Integer)
+2020-04-17 21:49:02,771 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-2] <==      Total: 1
+2020-04-17 21:49:02,771 DEBUG com.skiya.sportzplatform.aop.AuditInterceptor [http-nio-7777-exec-2] Hello from Interceptor...update
+2020-04-17 21:49:02,771 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-2] ==>  Preparing: update sportzplatform.users set first_name = ?, last_name = ?, middle_name = ?, user_profile_img = ?, user_email = ?, user_phone = ?, user_password = ?, last_login_date = ?, provider_id = ?, user_status = ?, reset_token = ?, alternate_name = ?, user_img = ?, user_dob = ?, user_passport_nric = ?, user_nationality = ?, user_ethinicity = ?, user_social_refid = ?, user_address_refid = ? where user_id = ? 
+2020-04-17 21:49:02,776 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-2] ==> Parameters: Siva(String), Sankaran(String), null, null, siva77@gmail.com(String), 87778666(String), $2a$10$8noN/idwMXoyHuEsvLwvr.i3k38ARQQaUSXB9xP4fqoh.STQYmJsa(String), null, null, AC(String), null, null, null, null, null, null, null, null, null, 1(Integer)
+2020-04-17 21:49:02,777 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-7777-exec-2] <==    Updates: 1
+2020-04-17 21:49:02,777 DEBUG org.springframework.transaction.support.AbstractPlatformTransactionManager [http-nio-7777-exec-2] Initiating transaction commit
+2020-04-17 21:49:02,778 DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager [http-nio-7777-exec-2] Committing JDBC transaction on Connection [HikariProxyConnection@1868920585 wrapping org.postgresql.jdbc.PgConnection@1d924e10]
+2020-04-17 21:49:02,779 DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager [http-nio-7777-exec-2] Releasing JDBC Connection [HikariProxyConnection@1868920585 wrapping org.postgresql.jdbc.PgConnection@1d924e10] after transaction
+2020-04-17 21:49:02,780 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-7777-exec-2] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-17 21:49:02,780 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-7777-exec-2] Writing [com.skiya.sportzplatform.dto.RestResponse@d654bd32]
+2020-04-17 21:49:02,780 DEBUG org.springframework.security.web.header.writers.HstsHeaderWriter [http-nio-7777-exec-2] Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@24f50935
+2020-04-17 21:49:02,780 DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionResponseWrapper [http-nio-7777-exec-2] SecurityContext is empty or contents are anonymous - context will not be stored in HttpSession.
+2020-04-17 21:49:02,783 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-2] Completed 200 OK
+2020-04-17 21:49:02,783 DEBUG org.springframework.security.web.access.ExceptionTranslationFilter [http-nio-7777-exec-2] Chain processed normally
+2020-04-17 21:49:02,784 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-7777-exec-2] SecurityContextHolder now cleared, as request processing completed
+2020-04-17 22:40:28,853 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=27m53s130ms842µs500ns).
+2020-04-17 23:04:04,243 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m35s194ms39µs700ns).
