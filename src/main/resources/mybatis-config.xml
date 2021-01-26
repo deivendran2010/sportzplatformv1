@@ -44,7 +44,7 @@
         <mapper resource="mapper/EventCategoryMapper.xml" />
     
     <mapper resource="mapper/FeaturedMapper.xml" />
-    <mapper resource="mapper/EventOrgMapper.xml" />
+    
     
   </mappers>
 </configuration>

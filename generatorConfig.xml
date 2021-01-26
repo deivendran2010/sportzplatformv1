@@ -78,9 +78,7 @@
     <table  schema="sportzplatform" tableName="featured">
     	<generatedKey column="featured_id" sqlStatement="JDBC" identity="true" />
     </table>
-    <table  schema="sportzplatform" tableName="event_org">
-    	<generatedKey column="event_organizer_id" sqlStatement="JDBC" identity="true" />
-    </table>
+    
     <table  schema="sportzplatform" tableName="event_category">
     	<generatedKey column="event_category_id" sqlStatement="JDBC" identity="true" />
     </table>

@@ -13,7 +13,7 @@ import com.skiya.sportzplatform.domain.EventOrg;
 import com.skiya.sportzplatform.domain.Events;
 import com.skiya.sportzplatform.domain.Sports;
 import com.skiya.sportzplatform.mapper.EventCategoryMapper;
-import com.skiya.sportzplatform.mapper.EventOrgMapper;
+
 import com.skiya.sportzplatform.mapper.EventsMapper;
 
 @Service
