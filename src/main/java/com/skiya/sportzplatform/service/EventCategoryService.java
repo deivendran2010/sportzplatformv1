@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.skiya.sportzplatform.domain.EventCategory;
-import com.skiya.sportzplatform.domain.EventOrg;
+
 import com.skiya.sportzplatform.domain.Sports;
 import com.skiya.sportzplatform.mapper.EventCategoryMapper;
 //import com.skiya.sportzplatform.mapper.SportsMapper;

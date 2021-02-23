@@ -1,5 +1,6 @@
 package com.skiya.sportzplatform.web.rest;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
@@ -9,17 +10,25 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.skiya.sportzplatform.domain.Company;
+import com.skiya.sportzplatform.domain.Events;
 import com.skiya.sportzplatform.domain.User;
 import com.skiya.sportzplatform.dto.RestResponse;
+import com.skiya.sportzplatform.filestorage.FileStorageService;
 import com.skiya.sportzplatform.service.CompanyService;
 import com.skiya.sportzplatform.service.UserService;
 
@@ -35,6 +44,9 @@ public class CompanyResource {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private FileStorageService fileStorageService;
 	
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public ResponseEntity<List<Company>> getAllCompanies() {
@@ -57,8 +69,28 @@ public class CompanyResource {
 		return new ResponseEntity<Company>(company, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/addCompany", method = RequestMethod.POST)
-	public ResponseEntity<?> addCompany(@RequestBody Company company, HttpServletRequest request) {
+	@RequestMapping(value = "/addUsers",method = RequestMethod.POST,
+			consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE})
+	public ResponseEntity<?> createSport(@RequestPart("jsondata") String jsondata, @RequestPart("file") MultipartFile file,@RequestPart("file2") MultipartFile file2,HttpServletRequest request) throws IOException  {
+		
+		 String fileName = fileStorageService.storeFile(file);
+		 String filename2=fileStorageService.storeFile(file2);
+
+	        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+	                .path("/downloadFile/")
+	                .path(fileName)
+	                .toUriString();
+	        String fileDownloadUri1 = ServletUriComponentsBuilder.fromCurrentContextPath()
+	                .path("/downloadFile/")
+	                .path(filename2)
+	                .toUriString();
+	        ObjectMapper h = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+	        Company company =h.readerFor(Events.class).readValue(jsondata);
+
+	        company.setCompanyProfileImg(fileDownloadUri);
+	        company.setCompanyImg(fileDownloadUri1);
+		
+		
 		log.debug("Company Details..." + company.toString());
 		Company companyDTO1 = companyService.getCompanyByEmail(company.getCompanyEmail());
 		if(Objects.nonNull(companyDTO1)) {

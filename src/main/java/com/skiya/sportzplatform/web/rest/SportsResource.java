@@ -61,11 +61,15 @@ public class SportsResource {
 			return new ResponseEntity<Object>(new RestResponse(false,"Sports Name "+ sport.getSportsName() + " already exist!"),
 					HttpStatus.OK);
 		}
+		
 		sportsService.create(sport);
 		log.debug("createSport() >> sport={}, rowsAdded={}", sport);
 		return Objects.nonNull(sport.getSportsId()) 
 				? new ResponseEntity<Sports>(sport, HttpStatus.CREATED)
 				: new ResponseEntity<Sports>(HttpStatus.BAD_REQUEST);
+		
+		 
+		
 
 	}
 	@RequestMapping(value = "/updateSport/{id}", method = RequestMethod.PUT)

@@ -15,8 +15,11 @@ public class Organizer {
     //Company Name for company
     //First and last name for User
     private String organizerName;
+    private String sportsIntrested;
     
-    private String alternateName;
+   
+
+	private String alternateName;
     
     private String email;
     
@@ -140,12 +143,21 @@ public class Organizer {
 		this.address = address;
 	}
 
-	@Override
-	public String toString() {
-		return "Organizer [organizerId=" + organizerId + ", companyRefid=" + companyRefid + ", userRefid=" + userRefid
-				+ ", organizerName=" + organizerName + ", alternateName=" + alternateName + ", email=" + email
-				+ ", contact=" + contact + ", website=" + website + ", profileImg=" + profileImg + ", organizerDesc="
-				+ organizerDesc + ", organizerImg=" + organizerImg + ", social=" + social + ", address=" + address
-				+ "]";
-	}
+	 public String getSportsIntrested() {
+			return sportsIntrested;
+		}
+
+		public void setSportsIntrested(String sportsIntrested) {
+			this.sportsIntrested = sportsIntrested;
+		}
+
+		@Override
+		public String toString() {
+			return "Organizer [organizerId=" + organizerId + ", companyRefid=" + companyRefid + ", userRefid="
+					+ userRefid + ", organizerName=" + organizerName + ", sportsIntrested=" + sportsIntrested
+					+ ", alternateName=" + alternateName + ", email=" + email + ", contact=" + contact + ", website="
+					+ website + ", profileImg=" + profileImg + ", organizerDesc=" + organizerDesc + ", organizerImg="
+					+ organizerImg + ", social=" + social + ", address=" + address + "]";
+		}
+	
 }

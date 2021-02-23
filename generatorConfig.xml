@@ -75,6 +75,12 @@
     <table  schema="sportzplatform" tableName="follower">
     	<generatedKey column="follower_id" sqlStatement="JDBC" identity="true" />
     </table>-->
+     <table  schema="sportzplatform" tableName="country">
+    	<generatedKey column="country_id" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table  schema="sportzplatform" tableName="state">
+    	<generatedKey column="state_id" sqlStatement="JDBC" identity="true" />
+    </table>
     <table  schema="sportzplatform" tableName="featured">
     	<generatedKey column="featured_id" sqlStatement="JDBC" identity="true" />
     </table>
@@ -84,6 +90,9 @@
     </table>
      <table  schema="sportzplatform" tableName="events">
     	<generatedKey column="event_id" sqlStatement="JDBC" identity="true" />
+    </table>
+    <table  schema="sportzplatform" tableName="test">
+    	<generatedKey column="no" sqlStatement="JDBC" identity="true" />
     </table>
   </context>
 </generatorConfiguration>

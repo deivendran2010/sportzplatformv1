@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.skiya.sportzplatform.domain.EventCategory;
-import com.skiya.sportzplatform.domain.EventOrg;
+
 import com.skiya.sportzplatform.domain.Sports;
 import com.skiya.sportzplatform.domain.User;
 import com.skiya.sportzplatform.dto.RestResponse;

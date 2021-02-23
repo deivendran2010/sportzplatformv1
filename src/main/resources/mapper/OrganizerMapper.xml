@@ -5,36 +5,39 @@
     <id column="organizer_id" jdbcType="INTEGER" property="organizerId" />
     <result column="company_refid" jdbcType="INTEGER" property="companyRefid" />
     <result column="user_refid" jdbcType="INTEGER" property="userRefid" />
-    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="organizer_name" jdbcType="VARCHAR" property="organizerName" />
+     <result column="sports_intrested" jdbcType="VARCHAR" property="sportsIntrested" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from sportzplatform.organizer
     where organizer_id = #{organizerId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" keyColumn="organizer_id" keyProperty="organizerId" parameterType="com.skiya.sportzplatform.domain.Organizer" useGeneratedKeys="true">
-    insert into sportzplatform.organizer (company_refid, user_refid)
-    values (#{companyRefid,jdbcType=INTEGER}, #{userRefid,jdbcType=INTEGER})
+    insert into sportzplatform.organizer (company_refid, user_refid,organizer_name,sports_intrested)
+    values (#{companyRefid,jdbcType=INTEGER}, #{userRefid,jdbcType=INTEGER},#{organizerName,jdbcType=VARCHAR},#{sportsIntrested,jdbcType=VARCHAR})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.Organizer">
     update sportzplatform.organizer
     set company_refid = #{companyRefid,jdbcType=INTEGER},
-      user_refid = #{userRefid,jdbcType=INTEGER}
+      user_refid = #{userRefid,jdbcType=INTEGER},
+      organizer_name=#{organizerName,jdbcType=VARCHAR},
+      sports_intrested=#{sportsIntrested,jdbcType=VARCHAR}
     where organizer_id = #{organizerId,jdbcType=INTEGER}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select organizer_id, company_refid, user_refid
+    select organizer_id, company_refid, user_refid,organizer_name,sports_intrested
     from sportzplatform.organizer
     where organizer_id = #{organizerId,jdbcType=INTEGER}
   </select>
   <select id="selectEmail" parameterType="java.lang.String" resultMap="BaseResultMap">
-  	select organizer_id, company_refid, user_refid 
+  	select organizer_id, company_refid, user_refid,organizer_name,sports_intrested
   	from sportzplatform.organizer o
 	where o.company_refid  in (select c.company_id from sportzplatform.company c where c.company_email = #{email,jdbcType=VARCHAR})
 	or o.user_refid in (select u.user_id from sportzplatform.user u where u.user_email = #{email,jdbcType=VARCHAR})
   </select>
   
   <select id="selectAll" resultMap="BaseResultMap">
-    select organizer_id, company_refid, user_refid
+   select organizer_id, company_refid, user_refid,organizer_name,sports_intrested
     from sportzplatform.organizer
   </select>
 </mapper>

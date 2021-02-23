@@ -40,10 +40,11 @@
     <mapper resource="mapper/TournamentRegistrationsMapper.xml" />
     <mapper resource="mapper/TournamentGroupsMapper.xml" />
     <mapper resource="mapper/TournamentPlayerRegistrationMapper.xml" />
-    
-        <mapper resource="mapper/EventCategoryMapper.xml" />
-    
+    <mapper resource="mapper/CountryMapper.xml" />
+    <mapper resource="mapper/EventCategoryMapper.xml" />
     <mapper resource="mapper/FeaturedMapper.xml" />
+     <mapper resource="mapper/StateMapper.xml" />
+    
     
     
   </mappers>

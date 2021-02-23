@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.skiya.sportzplatform.domain.Sports;
+import com.skiya.sportzplatform.domain.SportsCategory;
 import com.skiya.sportzplatform.mapper.SportsMapper;
 
 @Service
@@ -44,7 +45,7 @@ public class SportsService extends AbstractBaseService{
 				Sports sport = sportList.get(a);
 				if(Objects.nonNull(sport)) {
 					sport.setSportsFormat(toJson(sport.getSportsFormat().toString(), Object.class));
-					sport.setSportsCategory(toJson(sport.getSportsCategory().toString(), Object.class));
+					//sport.setSportsCategory(toJson(sport.getSportsCategory().toString(), Object.class));
 				}
 			}
 		}
@@ -54,16 +55,17 @@ public class SportsService extends AbstractBaseService{
 	public int create(Sports sport) {
 		Objects.requireNonNull(sport, "Sports is mandatory to create");
 		log.debug("Sport object..." + sport.toString());
-		sport.setSportsFormat(toJson(sport.getSportsFormat().toString(), Object.class));
-		sport.setSportsCategory(toJson(sport.getSportsCategory().toString(), Object.class));
+		//sport.setSportsFormat(toJson(sport.getSportsFormat().toString(), Object.class));
+		//sport.setSportsCategory(toJson(sport.getSportsCategory().toString(), Object.class));
 		sportsMapper.insert(sport);
+		System.out.println(sport);
 		return sport.getSportsId();
 	}
 	
 	public int update(Sports sport) {
 		Objects.requireNonNull(sport, "Sports is mandatory to update");
 		sport.setSportsFormat(toJson(sport.getSportsFormat().toString(), Object.class));
-		sport.setSportsCategory(toJson(sport.getSportsCategory().toString(), Object.class));
+		//sport.setSportsCategory(toJson(sport.getSportsCategory().toString(), Object.class));
 		return sportsMapper.updateByPrimaryKey(sport);
 	}
 	
