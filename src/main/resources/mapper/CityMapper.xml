@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.CityMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.City">
+    <id column="city_id" jdbcType="INTEGER" property="cityId" />
+    <result column="city_name" jdbcType="VARCHAR" property="cityName" />
+    <result column="city_code" jdbcType="VARCHAR" property="cityCode" />
+    <result column="state_id" jdbcType="INTEGER" property="stateId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.state
+    where city_id = #{cityId,jdbcType=INTEGER}
+  </delete>
+  
+ <!-- <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.Country">
+    update sportzplatform.country
+    set country_name = #{countryName,jdbcType=VARCHAR},
+      country_code = #{countryCode,jdbcType=VARCHAR},
+      currency_code = #{currencyCode,jdbcTypeVARCHAR}
+    where country_id = #{countryId,jdbcType=INTEGER}
+  </update>-->
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select city_id, city_name, city_code, state_id
+    from sportzplatform.state
+    where city_id = #{cityId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select city_id, city_name, city_code, state_id
+    from sportzplatform.state
+    where city_name = #{cityName,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+   select city_id, city_name, city_code, state_id
+    from sportzplatform.state
+  </select>
+  
+   <select id="getstateByCountry" resultMap="BaseResultMap">
+    select city_id, city_name, city_code, state_id
+    from sportzplatform.state
+  </select>
+  
+  <insert id="insert" keyColumn="state_id" keyProperty="stateId" parameterType="com.skiya.sportzplatform.domain.City" useGeneratedKeys="true">
+    insert into sportzplatform.city (city_name, city_code, state_id)
+    values (#{cityName,jdbcType=VARCHAR}, #{cityCode,jdbcType=VARCHAR}, 
+       #{stateId,jdbcType=INTEGER})
+  </insert>
+</mapper>

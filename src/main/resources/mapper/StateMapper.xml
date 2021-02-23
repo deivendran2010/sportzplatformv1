@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skiya.sportzplatform.mapper.StateMapper">
+  <resultMap id="BaseResultMap" type="com.skiya.sportzplatform.domain.State">
+    <id column="state_id" jdbcType="INTEGER" property="stateId" />
+    <result column="state_name" jdbcType="VARCHAR" property="stateName" />
+    <result column="statecode" jdbcType="VARCHAR" property="stateCode" />
+    <result column="country_id" jdbcType="INTEGER" property="countryId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sportzplatform.state
+    where state_id = #{stateId,jdbcType=INTEGER}
+  </delete>
+  
+ <!-- <update id="updateByPrimaryKey" parameterType="com.skiya.sportzplatform.domain.Country">
+    update sportzplatform.country
+    set country_name = #{countryName,jdbcType=VARCHAR},
+      country_code = #{countryCode,jdbcType=VARCHAR},
+      currency_code = #{currencyCode,jdbcTypeVARCHAR}
+    where country_id = #{countryId,jdbcType=INTEGER}
+  </update>-->
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select state_id, state_name, statecode, country_id
+    from sportzplatform.state
+    where state_id = #{stateId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select state_id, state_name, statecode, country_id
+    from sportzplatform.state
+    where state_name = #{stateName,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select state_id, state_name, statecode, country_id
+    from sportzplatform.state
+  </select>
+  
+   <select id="getstateByCountry" resultMap="BaseResultMap">
+    select  state_id, state_name, statecode, country_id
+    from sportzplatform.state where country_id= #{countryId,jdbcType=INTEGER}
+  </select>
+  
+  <insert id="insert" keyColumn="state_id" keyProperty="stateId" parameterType="com.skiya.sportzplatform.domain.State" useGeneratedKeys="true">
+    insert into sportzplatform.state (state_name, statecode, country_id)
+    values (#{stateName,jdbcType=VARCHAR}, #{stateCode,jdbcType=VARCHAR}, 
+       #{countryId,jdbcType=INTEGER})
+  </insert>
+</mapper>
